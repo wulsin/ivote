@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import MagicalRecord
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,6 +18,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //Core Data Stack
+        MagicalRecord.setupCoreDataStack(withStoreNamed: "iVote")
+        
+        //Navigate to initial screen if first time app opened
+        user = retrieveUser()
+        if user == nil {
+            let storyboard = "Main"
+            let vc = "WelcomeVC"
+            displayViewController(storyboard: storyboard, vc: vc)
+        }
+        
+        
         return true
     }
 
@@ -42,6 +56,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    //MARK: Optional Override for Displaying a View Controller immediately on launch (For development)
+    func displayViewController (storyboard : String?, vc : String?) {
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let storyboard = UIStoryboard(name: storyboard!, bundle: nil)
+        
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: vc!)
+        
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
     }
 
     // MARK: - Core Data stack

@@ -15,6 +15,14 @@
 		2949551E210C0F1B00E9F2D5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2949551C210C0F1B00E9F2D5 /* LaunchScreen.storyboard */; };
 		29495529210C0F1B00E9F2D5 /* iVoteTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29495528210C0F1B00E9F2D5 /* iVoteTests.swift */; };
 		29495534210C0F1B00E9F2D5 /* iVoteUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29495533210C0F1B00E9F2D5 /* iVoteUITests.swift */; };
+		29495542210FA08200E9F2D5 /* MuseoSansRounded-500.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29495541210FA08200E9F2D5 /* MuseoSansRounded-500.otf */; };
+		29495545210FA2C700E9F2D5 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29495544210FA2C700E9F2D5 /* Menu.swift */; };
+		29495547210FA87E00E9F2D5 /* Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29495546210FA87E00E9F2D5 /* Helpers.swift */; };
+		29495549210FA9E600E9F2D5 /* MuseoSansRounded-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 29495548210FA9E600E9F2D5 /* MuseoSansRounded-900.otf */; };
+		295FB72E21111796002FEC95 /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB72D21111796002FEC95 /* Home.swift */; };
+		295FB73021113FA2002FEC95 /* ElectionResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB72F21113FA2002FEC95 /* ElectionResources.swift */; };
+		295FB73221113FAD002FEC95 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB73121113FAD002FEC95 /* About.swift */; };
+		295FB73421113FC5002FEC95 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB73321113FC5002FEC95 /* Settings.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +57,14 @@
 		2949552F210C0F1B00E9F2D5 /* iVoteUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iVoteUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		29495533210C0F1B00E9F2D5 /* iVoteUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iVoteUITests.swift; sourceTree = "<group>"; };
 		29495535210C0F1B00E9F2D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		29495541210FA08200E9F2D5 /* MuseoSansRounded-500.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSansRounded-500.otf"; sourceTree = "<group>"; };
+		29495544210FA2C700E9F2D5 /* Menu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		29495546210FA87E00E9F2D5 /* Helpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helpers.swift; sourceTree = "<group>"; };
+		29495548210FA9E600E9F2D5 /* MuseoSansRounded-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "MuseoSansRounded-900.otf"; sourceTree = "<group>"; };
+		295FB72D21111796002FEC95 /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		295FB72F21113FA2002FEC95 /* ElectionResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectionResources.swift; sourceTree = "<group>"; };
+		295FB73121113FAD002FEC95 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
+		295FB73321113FC5002FEC95 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,11 +117,17 @@
 			children = (
 				29495510210C0F1B00E9F2D5 /* AppDelegate.swift */,
 				29495512210C0F1B00E9F2D5 /* ViewController.swift */,
+				295FB72D21111796002FEC95 /* Home.swift */,
+				29495544210FA2C700E9F2D5 /* Menu.swift */,
+				295FB72F21113FA2002FEC95 /* ElectionResources.swift */,
+				295FB73121113FAD002FEC95 /* About.swift */,
+				295FB73321113FC5002FEC95 /* Settings.swift */,
+				29495546210FA87E00E9F2D5 /* Helpers.swift */,
 				29495514210C0F1B00E9F2D5 /* Main.storyboard */,
-				2949551A210C0F1B00E9F2D5 /* Assets.xcassets */,
 				2949551C210C0F1B00E9F2D5 /* LaunchScreen.storyboard */,
-				2949551F210C0F1B00E9F2D5 /* Info.plist */,
 				29495517210C0F1B00E9F2D5 /* iVote.xcdatamodeld */,
+				2949551F210C0F1B00E9F2D5 /* Info.plist */,
+				29495543210FA09400E9F2D5 /* Resources */,
 			);
 			path = iVote;
 			sourceTree = "<group>";
@@ -126,6 +148,16 @@
 				29495535210C0F1B00E9F2D5 /* Info.plist */,
 			);
 			path = iVoteUITests;
+			sourceTree = "<group>";
+		};
+		29495543210FA09400E9F2D5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				29495548210FA9E600E9F2D5 /* MuseoSansRounded-900.otf */,
+				29495541210FA08200E9F2D5 /* MuseoSansRounded-500.otf */,
+				2949551A210C0F1B00E9F2D5 /* Assets.xcassets */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -235,6 +267,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				29495542210FA08200E9F2D5 /* MuseoSansRounded-500.otf in Resources */,
+				29495549210FA9E600E9F2D5 /* MuseoSansRounded-900.otf in Resources */,
 				2949551E210C0F1B00E9F2D5 /* LaunchScreen.storyboard in Resources */,
 				2949551B210C0F1B00E9F2D5 /* Assets.xcassets in Resources */,
 				29495516210C0F1B00E9F2D5 /* Main.storyboard in Resources */,
@@ -263,8 +297,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				29495519210C0F1B00E9F2D5 /* iVote.xcdatamodeld in Sources */,
+				295FB73221113FAD002FEC95 /* About.swift in Sources */,
 				29495513210C0F1B00E9F2D5 /* ViewController.swift in Sources */,
+				29495545210FA2C700E9F2D5 /* Menu.swift in Sources */,
+				29495547210FA87E00E9F2D5 /* Helpers.swift in Sources */,
+				295FB72E21111796002FEC95 /* Home.swift in Sources */,
+				295FB73421113FC5002FEC95 /* Settings.swift in Sources */,
 				29495511210C0F1B00E9F2D5 /* AppDelegate.swift in Sources */,
+				295FB73021113FA2002FEC95 /* ElectionResources.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
