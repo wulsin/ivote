@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		17CCEC897423B90540C90699 /* Pods_iVote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D13823292BC1E3DE59C391 /* Pods_iVote.framework */; };
+		292B1EAA212230F9001EA082 /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292B1EA9212230F9001EA082 /* NotificationScheduler.swift */; };
 		29495511210C0F1B00E9F2D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29495510210C0F1B00E9F2D5 /* AppDelegate.swift */; };
 		29495513210C0F1B00E9F2D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29495512210C0F1B00E9F2D5 /* ViewController.swift */; };
 		29495516210C0F1B00E9F2D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29495514210C0F1B00E9F2D5 /* Main.storyboard */; };
@@ -23,6 +25,9 @@
 		295FB73021113FA2002FEC95 /* ElectionResources.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB72F21113FA2002FEC95 /* ElectionResources.swift */; };
 		295FB73221113FAD002FEC95 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB73121113FAD002FEC95 /* About.swift */; };
 		295FB73421113FC5002FEC95 /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 295FB73321113FC5002FEC95 /* Settings.swift */; };
+		2991E383211B776E00D32E88 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2991E382211B776E00D32E88 /* Action.swift */; };
+		DAD64E4DAC1FD911C4B4892A /* Pods_iVoteUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 83C4621F5294CD6238C81105 /* Pods_iVoteUITests.framework */; };
+		E99E9DEC6F3B8AFB2EB661F0 /* Pods_iVoteTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 584AC1AB3015D735661E26EF /* Pods_iVoteTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +48,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		292B1EA9212230F9001EA082 /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
 		2949550D210C0F1B00E9F2D5 /* iVote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iVote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29495510210C0F1B00E9F2D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29495512210C0F1B00E9F2D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -65,6 +71,16 @@
 		295FB72F21113FA2002FEC95 /* ElectionResources.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElectionResources.swift; sourceTree = "<group>"; };
 		295FB73121113FAD002FEC95 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 		295FB73321113FC5002FEC95 /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
+		2991E382211B776E00D32E88 /* Action.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Action.swift; sourceTree = "<group>"; };
+		2CF8715501DFA72655994EB2 /* Pods-iVote.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iVote.release.xcconfig"; path = "Pods/Target Support Files/Pods-iVote/Pods-iVote.release.xcconfig"; sourceTree = "<group>"; };
+		4EE77C68570239DD938D053A /* Pods-iVoteUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iVoteUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iVoteUITests/Pods-iVoteUITests.release.xcconfig"; sourceTree = "<group>"; };
+		584AC1AB3015D735661E26EF /* Pods_iVoteTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iVoteTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		78D8D317A1C7481FB91381C8 /* Pods-iVote.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iVote.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iVote/Pods-iVote.debug.xcconfig"; sourceTree = "<group>"; };
+		7C03BBE09FE6D7A638FD8010 /* Pods-iVoteTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iVoteTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-iVoteTests/Pods-iVoteTests.release.xcconfig"; sourceTree = "<group>"; };
+		83C4621F5294CD6238C81105 /* Pods_iVoteUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iVoteUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		98D5F35C6430B9819A381696 /* Pods-iVoteTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iVoteTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iVoteTests/Pods-iVoteTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D379EA20324EE58BD9B0EF7B /* Pods-iVoteUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iVoteUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-iVoteUITests/Pods-iVoteUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		E1D13823292BC1E3DE59C391 /* Pods_iVote.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iVote.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +88,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				17CCEC897423B90540C90699 /* Pods_iVote.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -79,6 +96,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E99E9DEC6F3B8AFB2EB661F0 /* Pods_iVoteTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -86,12 +104,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DAD64E4DAC1FD911C4B4892A /* Pods_iVoteUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		09147F0C40FEBD77B7353245 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				78D8D317A1C7481FB91381C8 /* Pods-iVote.debug.xcconfig */,
+				2CF8715501DFA72655994EB2 /* Pods-iVote.release.xcconfig */,
+				98D5F35C6430B9819A381696 /* Pods-iVoteTests.debug.xcconfig */,
+				7C03BBE09FE6D7A638FD8010 /* Pods-iVoteTests.release.xcconfig */,
+				D379EA20324EE58BD9B0EF7B /* Pods-iVoteUITests.debug.xcconfig */,
+				4EE77C68570239DD938D053A /* Pods-iVoteUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		29495504210C0F1B00E9F2D5 = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +131,8 @@
 				29495527210C0F1B00E9F2D5 /* iVoteTests */,
 				29495532210C0F1B00E9F2D5 /* iVoteUITests */,
 				2949550E210C0F1B00E9F2D5 /* Products */,
+				09147F0C40FEBD77B7353245 /* Pods */,
+				80E4C96469BFE7800671F646 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -118,11 +152,13 @@
 				29495510210C0F1B00E9F2D5 /* AppDelegate.swift */,
 				29495512210C0F1B00E9F2D5 /* ViewController.swift */,
 				295FB72D21111796002FEC95 /* Home.swift */,
+				2991E382211B776E00D32E88 /* Action.swift */,
 				29495544210FA2C700E9F2D5 /* Menu.swift */,
 				295FB72F21113FA2002FEC95 /* ElectionResources.swift */,
 				295FB73121113FAD002FEC95 /* About.swift */,
 				295FB73321113FC5002FEC95 /* Settings.swift */,
 				29495546210FA87E00E9F2D5 /* Helpers.swift */,
+				292B1EA9212230F9001EA082 /* NotificationScheduler.swift */,
 				29495514210C0F1B00E9F2D5 /* Main.storyboard */,
 				2949551C210C0F1B00E9F2D5 /* LaunchScreen.storyboard */,
 				29495517210C0F1B00E9F2D5 /* iVote.xcdatamodeld */,
@@ -160,6 +196,16 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
+		80E4C96469BFE7800671F646 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E1D13823292BC1E3DE59C391 /* Pods_iVote.framework */,
+				584AC1AB3015D735661E26EF /* Pods_iVoteTests.framework */,
+				83C4621F5294CD6238C81105 /* Pods_iVoteUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -167,9 +213,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 29495538210C0F1B00E9F2D5 /* Build configuration list for PBXNativeTarget "iVote" */;
 			buildPhases = (
+				06F7804A0FC5BA709121B2ED /* [CP] Check Pods Manifest.lock */,
 				29495509210C0F1B00E9F2D5 /* Sources */,
 				2949550A210C0F1B00E9F2D5 /* Frameworks */,
 				2949550B210C0F1B00E9F2D5 /* Resources */,
+				A16AF33442FB32D5C56921C2 /* [CP] Embed Pods Frameworks */,
+				EB0365ABF8AECF22532C0D8D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,9 +233,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2949553B210C0F1B00E9F2D5 /* Build configuration list for PBXNativeTarget "iVoteTests" */;
 			buildPhases = (
+				ACDF25F7BCFCE592E575F2A9 /* [CP] Check Pods Manifest.lock */,
 				29495520210C0F1B00E9F2D5 /* Sources */,
 				29495521210C0F1B00E9F2D5 /* Frameworks */,
 				29495522210C0F1B00E9F2D5 /* Resources */,
+				E5A49FCD6456DE5BB2C61921 /* [CP] Embed Pods Frameworks */,
+				CE6AF183E13185B2B11808CA /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -202,9 +254,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2949553E210C0F1B00E9F2D5 /* Build configuration list for PBXNativeTarget "iVoteUITests" */;
 			buildPhases = (
+				CC612993B7D6843B2762873B /* [CP] Check Pods Manifest.lock */,
 				2949552B210C0F1B00E9F2D5 /* Sources */,
 				2949552C210C0F1B00E9F2D5 /* Frameworks */,
 				2949552D210C0F1B00E9F2D5 /* Resources */,
+				BAFE7A28DAE327032B37F74F /* [CP] Embed Pods Frameworks */,
+				813E89CE608A306802FBD75E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,7 +283,7 @@
 				TargetAttributes = {
 					2949550C210C0F1B00E9F2D5 = {
 						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					29495523210C0F1B00E9F2D5 = {
 						CreatedOnToolsVersion = 9.2;
@@ -291,6 +346,156 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		06F7804A0FC5BA709121B2ED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iVote-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		813E89CE608A306802FBD75E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iVoteUITests/Pods-iVoteUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A16AF33442FB32D5C56921C2 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-iVote/Pods-iVote-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/MagicalRecord/MagicalRecord.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MagicalRecord.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iVote/Pods-iVote-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ACDF25F7BCFCE592E575F2A9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iVoteTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BAFE7A28DAE327032B37F74F /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iVoteUITests/Pods-iVoteUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CC612993B7D6843B2762873B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-iVoteUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CE6AF183E13185B2B11808CA /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iVoteTests/Pods-iVoteTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E5A49FCD6456DE5BB2C61921 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iVoteTests/Pods-iVoteTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EB0365ABF8AECF22532C0D8D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-iVote/Pods-iVote-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		29495509210C0F1B00E9F2D5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -299,12 +504,14 @@
 				29495519210C0F1B00E9F2D5 /* iVote.xcdatamodeld in Sources */,
 				295FB73221113FAD002FEC95 /* About.swift in Sources */,
 				29495513210C0F1B00E9F2D5 /* ViewController.swift in Sources */,
+				2991E383211B776E00D32E88 /* Action.swift in Sources */,
 				29495545210FA2C700E9F2D5 /* Menu.swift in Sources */,
 				29495547210FA87E00E9F2D5 /* Helpers.swift in Sources */,
 				295FB72E21111796002FEC95 /* Home.swift in Sources */,
 				295FB73421113FC5002FEC95 /* Settings.swift in Sources */,
 				29495511210C0F1B00E9F2D5 /* AppDelegate.swift in Sources */,
 				295FB73021113FA2002FEC95 /* ElectionResources.swift in Sources */,
+				292B1EAA212230F9001EA082 /* NotificationScheduler.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -468,14 +675,18 @@
 		};
 		29495539210C0F1B00E9F2D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 78D8D317A1C7481FB91381C8 /* Pods-iVote.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FNLSD8Z4BW;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q69AAMQJU8;
 				INFOPLIST_FILE = iVote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BallotBud.iVote;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.ivote.ivote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1744c01d-887d-4ed9-ac98-020fc9bf7ded";
+				PROVISIONING_PROFILE_SPECIFIER = "ivote distribution v1";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -483,14 +694,18 @@
 		};
 		2949553A210C0F1B00E9F2D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2CF8715501DFA72655994EB2 /* Pods-iVote.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = FNLSD8Z4BW;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				CODE_SIGN_STYLE = Manual;
+				DEVELOPMENT_TEAM = Q69AAMQJU8;
 				INFOPLIST_FILE = iVote/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.BallotBud.iVote;
+				PRODUCT_BUNDLE_IDENTIFIER = tech.ivote.ivote;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "1744c01d-887d-4ed9-ac98-020fc9bf7ded";
+				PROVISIONING_PROFILE_SPECIFIER = "ivote distribution v1";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -498,6 +713,7 @@
 		};
 		2949553C210C0F1B00E9F2D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 98D5F35C6430B9819A381696 /* Pods-iVoteTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -515,6 +731,7 @@
 		};
 		2949553D210C0F1B00E9F2D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7C03BBE09FE6D7A638FD8010 /* Pods-iVoteTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -532,6 +749,7 @@
 		};
 		2949553F210C0F1B00E9F2D5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D379EA20324EE58BD9B0EF7B /* Pods-iVoteUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -548,6 +766,7 @@
 		};
 		29495540210C0F1B00E9F2D5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4EE77C68570239DD938D053A /* Pods-iVoteUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

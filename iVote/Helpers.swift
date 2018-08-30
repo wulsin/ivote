@@ -63,6 +63,20 @@ class KeyboardAwareVC : UIViewController {
             self.scrollView.contentOffset.y = 0
         }
     }
+    
+    /* Include this in Text Field Delegate
+    /** Record bottom edge of active text field frame (for proper adjustment when user types keyboard) */
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        bottomEdge = textField.frame.origin.y + textField.frame.size.height + 75
+        updateOffset()
+        return true
+    }
+    
+    //** When editing is over, dismiss keyboard & reset bottom edge*/
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        bottomEdge = 0
+    }
+    */
 }
 
 //MARK: Border Control Extensions
@@ -122,5 +136,22 @@ class IndentedTextField : UITextField {
         var rect = super.clearButtonRect(forBounds: bounds)
         rect.origin.x -= clearButLeftIndent
         return rect
+    }
+}
+
+
+// MARK: Custom Share Action
+extension UIViewController {
+    @IBAction func shareApp(_ sender: AnyObject) {
+        
+        let activityViewController = UIActivityViewController(
+            activityItems: ["Don’t forget to vote this election...iVote helped me to register and request a mail-in ballot: https://grvk.app.link/iVote."],
+            applicationActivities: nil)
+        
+        if let popoverPresentationController = activityViewController.popoverPresentationController {
+            popoverPresentationController.sourceView = (sender as! UIView)
+        }
+        
+        present(activityViewController, animated: true, completion: nil)
     }
 }

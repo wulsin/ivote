@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="cWD-yB-Jxk">
-    <device id="retina5_9" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mdc-La-MlV">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -23,14 +23,14 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MenuVC" customModule="iVote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ot5-Wd-0e2">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Menu" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VKf-Ar-EXB">
-                                        <rect key="frame" x="137" y="50" width="100" height="35"/>
+                                        <rect key="frame" x="137" y="38.5" width="100" height="35"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="35" id="FwT-tY-1Ur"/>
                                             <constraint firstAttribute="width" constant="100" id="iZp-hk-glE"/>
@@ -40,7 +40,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="R8v-1v-WTo">
-                                        <rect key="frame" x="20" y="37.666666666666657" width="60" height="60"/>
+                                        <rect key="frame" x="20" y="26" width="60" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="FgR-aU-wpP"/>
                                             <constraint firstAttribute="width" constant="60" id="Qvl-Bi-oLD"/>
@@ -61,7 +61,7 @@
                                 </constraints>
                             </view>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Ih0-HV-TII">
-                                <rect key="frame" x="0.0" y="112" width="375" height="666"/>
+                                <rect key="frame" x="0.0" y="112" width="375" height="555"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="sgS-ak-Rrd">
                                     <size key="itemSize" width="50" height="50"/>
@@ -78,7 +78,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LgH-ka-Z15">
-                                                    <rect key="frame" x="33" y="18.666666666666671" width="322" height="32"/>
+                                                    <rect key="frame" x="33" y="18.5" width="322" height="32"/>
                                                     <constraints>
                                                         <constraint firstAttribute="height" constant="32" id="2ZO-uV-gTy"/>
                                                     </constraints>
@@ -132,30 +132,34 @@
                         <outlet property="collectionView" destination="Ih0-HV-TII" id="MbR-ig-XB4"/>
                         <segue destination="qBo-zY-4Dm" kind="show" identifier="OpenAbout" id="7z0-TV-3Zh"/>
                         <segue destination="0PH-6T-vrq" kind="show" identifier="OpenElectionResources" id="20Q-uc-JGh"/>
+                        <segue destination="h69-cf-ISi" kind="show" identifier="OpenSettings" id="gFy-c1-Jar"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2009" y="117"/>
         </scene>
-        <!--View Controller-->
+        <!--Change StatusVC-->
         <scene sceneID="syw-6e-tuL">
             <objects>
-                <viewController id="F4m-Nh-kSc" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangeStatusVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="F4m-Nh-kSc" customClass="ChangeStatusVC" customModule="iVote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="SvD-Dw-jBw">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GiA-IY-EgA">
-                                <rect key="frame" x="20" y="64" width="60" height="60"/>
+                                <rect key="frame" x="20" y="40" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="pZ1-hz-kVd"/>
                                     <constraint firstAttribute="height" constant="60" id="yZX-Hs-itc"/>
                                 </constraints>
                                 <state key="normal" image="backArrow"/>
+                                <connections>
+                                    <action selector="dismissVC" destination="F4m-Nh-kSc" eventType="touchUpInside" id="BDK-VQ-uFG"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rPc-0k-a5c">
-                                <rect key="frame" x="20" y="173" width="335" height="116"/>
+                                <rect key="frame" x="20" y="149" width="335" height="116"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="116" id="kHZ-gC-v83"/>
                                 </constraints>
@@ -166,7 +170,7 @@ in ballot?</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dW-fF-Bzi">
-                                <rect key="frame" x="44" y="353" width="287" height="48"/>
+                                <rect key="frame" x="44" y="329" width="287" height="48"/>
                                 <color key="backgroundColor" red="0.19607843137254902" green="0.71764705882352942" blue="0.33725490196078434" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="287" id="K0w-MU-AHv"/>
@@ -181,9 +185,12 @@ in ballot?</string>
                                         <real key="value" value="24"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectYes" destination="F4m-Nh-kSc" eventType="touchUpInside" id="uxB-cf-kRY"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6a0-PD-HOG">
-                                <rect key="frame" x="44" y="465" width="287" height="48"/>
+                                <rect key="frame" x="44" y="441" width="287" height="48"/>
                                 <color key="backgroundColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="287" id="Job-Xt-c8U"/>
@@ -198,9 +205,12 @@ in ballot?</string>
                                         <real key="value" value="24"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="selectNo" destination="F4m-Nh-kSc" eventType="touchUpInside" id="8Vq-kW-UgV"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Guw-ci-zhT">
-                                <rect key="frame" x="44" y="577" width="287" height="48"/>
+                                <rect key="frame" x="44" y="553" width="287" height="48"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="287" id="eRE-MI-SkY"/>
                                     <constraint firstAttribute="height" constant="48" id="v3j-MD-RbQ"/>
@@ -216,6 +226,9 @@ Election Day.</string>
                                         <integer key="value" value="1"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="willVoteInPerson" destination="F4m-Nh-kSc" eventType="touchUpInside" id="OaY-mp-aBy"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -234,17 +247,98 @@ Election Day.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="S1q-C5-Kjv"/>
                     </view>
+                    <connections>
+                        <outlet property="headerLabel" destination="rPc-0k-a5c" id="e4Y-Ar-bC7"/>
+                        <outlet property="neitherBut" destination="Guw-ci-zhT" id="zvt-WT-dsP"/>
+                        <outlet property="noBut" destination="6a0-PD-HOG" id="e5f-dR-z3e"/>
+                        <outlet property="yesBut" destination="5dW-fF-Bzi" id="c3X-eW-QP8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tfp-el-vxW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2870" y="821"/>
+        </scene>
+        <!--WebVC-->
+        <scene sceneID="pcH-U0-FfB">
+            <objects>
+                <viewController storyboardIdentifier="WebVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="HV2-A1-Da4" customClass="WebVC" customModule="iVote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PoB-UE-q1L">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iVoteHeader" translatesAutoresizingMaskIntoConstraints="NO" id="8hX-aE-dlm">
+                                <rect key="frame" x="129" y="33" width="116" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="116" id="D67-5N-lmd"/>
+                                    <constraint firstAttribute="height" constant="46" id="st0-Hi-sYz"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xcm-ZD-HZm">
+                                <rect key="frame" x="15" y="26" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="Jb6-51-Ttm"/>
+                                    <constraint firstAttribute="height" constant="60" id="S8B-k1-iL0"/>
+                                </constraints>
+                                <state key="normal" image="backArrow"/>
+                                <connections>
+                                    <action selector="dismissVC" destination="HV2-A1-Da4" eventType="touchUpInside" id="8UW-gp-yHH"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flagHeader" translatesAutoresizingMaskIntoConstraints="NO" id="o1m-6P-CrO">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="brf-aL-ced"/>
+                                </constraints>
+                            </imageView>
+                            <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6od-rb-kfs">
+                                <rect key="frame" x="0.0" y="112" width="375" height="555"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="Ivs-f5-L3j">
+                                <rect key="frame" x="177" y="323.5" width="20" height="20"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="20" id="EZh-1k-4hB"/>
+                                    <constraint firstAttribute="height" constant="20" id="Ixc-JQ-Afk"/>
+                                </constraints>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="o1m-6P-CrO" firstAttribute="top" secondItem="PoB-UE-q1L" secondAttribute="top" id="2Fe-hd-DeM"/>
+                            <constraint firstItem="6od-rb-kfs" firstAttribute="leading" secondItem="HaW-NM-sVz" secondAttribute="leading" id="8qe-tf-bsH"/>
+                            <constraint firstItem="HaW-NM-sVz" firstAttribute="trailing" secondItem="6od-rb-kfs" secondAttribute="trailing" id="8zH-in-9kJ"/>
+                            <constraint firstItem="HaW-NM-sVz" firstAttribute="bottom" secondItem="6od-rb-kfs" secondAttribute="bottom" id="A5G-8H-Ju9"/>
+                            <constraint firstItem="xcm-ZD-HZm" firstAttribute="leading" secondItem="HaW-NM-sVz" secondAttribute="leading" constant="15" id="Btz-ky-oPE"/>
+                            <constraint firstItem="8hX-aE-dlm" firstAttribute="centerX" secondItem="o1m-6P-CrO" secondAttribute="centerX" id="GQO-6d-GAL"/>
+                            <constraint firstItem="8hX-aE-dlm" firstAttribute="centerY" secondItem="xcm-ZD-HZm" secondAttribute="centerY" id="LHw-uy-XQK"/>
+                            <constraint firstItem="8hX-aE-dlm" firstAttribute="centerY" secondItem="o1m-6P-CrO" secondAttribute="centerY" priority="750" id="NiP-fh-dWQ"/>
+                            <constraint firstItem="Ivs-f5-L3j" firstAttribute="centerX" secondItem="PoB-UE-q1L" secondAttribute="centerX" id="ZeZ-Us-1l9"/>
+                            <constraint firstItem="Ivs-f5-L3j" firstAttribute="centerY" secondItem="PoB-UE-q1L" secondAttribute="centerY" id="aQY-dq-glz"/>
+                            <constraint firstItem="6od-rb-kfs" firstAttribute="top" secondItem="o1m-6P-CrO" secondAttribute="bottom" id="gY7-4c-aZS"/>
+                            <constraint firstItem="o1m-6P-CrO" firstAttribute="trailing" secondItem="HaW-NM-sVz" secondAttribute="trailing" id="iG0-rn-20g"/>
+                            <constraint firstItem="o1m-6P-CrO" firstAttribute="leading" secondItem="HaW-NM-sVz" secondAttribute="leading" id="lJE-Mk-b5Y"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="HaW-NM-sVz"/>
+                    </view>
+                    <connections>
+                        <outlet property="loadingIndicator" destination="Ivs-f5-L3j" id="VDr-3X-PXm"/>
+                        <outlet property="webView" destination="6od-rb-kfs" id="8ur-xO-8LU"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HOM-CZ-rHb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2870" y="1710"/>
         </scene>
         <!--Election ResourcesVC-->
         <scene sceneID="vut-Vk-1mp">
             <objects>
                 <viewController storyboardIdentifier="ElectionResourcesVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="0PH-6T-vrq" customClass="ElectionResourcesVC" customModule="iVote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="apd-k4-vze">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flagHeader" translatesAutoresizingMaskIntoConstraints="NO" id="CwR-BY-TgQ">
@@ -254,14 +348,14 @@ Election Day.</string>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iVoteHeader" translatesAutoresizingMaskIntoConstraints="NO" id="fby-7s-XzN">
-                                <rect key="frame" x="129.66666666666666" y="50" width="116" height="46"/>
+                                <rect key="frame" x="129.5" y="33" width="116" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="116" id="e24-on-obj"/>
                                     <constraint firstAttribute="height" constant="46" id="x9h-6K-YyY"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMI-HM-Us6">
-                                <rect key="frame" x="15" y="43" width="60" height="60"/>
+                                <rect key="frame" x="15" y="26" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="ZNd-fI-PD8"/>
                                     <constraint firstAttribute="height" constant="60" id="wBb-Xa-2Ep"/>
@@ -281,7 +375,7 @@ Election Day.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMg-a6-uys">
-                                <rect key="frame" x="0.0" y="179" width="375" height="534"/>
+                                <rect key="frame" x="0.0" y="179" width="375" height="423"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ubS-WM-zrW">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="500"/>
@@ -308,7 +402,7 @@ Election Day.</string>
                                             <constraint firstAttribute="width" constant="287" id="WBK-Xx-qrN"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="MuseoSansRounded-900" family="Museo Sans Rounded" pointSize="20"/>
-                                        <state key="normal" title="Secretary of State">
+                                        <state key="normal" title="USA.gov">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -328,7 +422,7 @@ Election Day.</string>
                                             <constraint firstAttribute="width" constant="287" id="JGm-RL-p0X"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="MuseoSansRounded-900" family="Museo Sans Rounded" pointSize="20"/>
-                                        <state key="normal" title="Ballotpedia">
+                                        <state key="normal" title="Nonpartisan Voter Guide">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -348,7 +442,7 @@ Election Day.</string>
                                             <constraint firstAttribute="height" constant="48" id="JrY-Cp-RqX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="MuseoSansRounded-900" family="Museo Sans Rounded" pointSize="20"/>
-                                        <state key="normal" title="League of Women Voters">
+                                        <state key="normal" title="Secretary of State">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <userDefinedRuntimeAttributes>
@@ -385,17 +479,18 @@ Election Day.</string>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xf5-mX-MUO">
-                                <rect key="frame" x="0.0" y="713" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="602" width="375" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="275-G9-98x"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="MuseoSansRounded-900" family="Museo Sans Rounded" pointSize="20"/>
                                 <inset key="titleEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Share to Facebook" image="fbIcon" backgroundImage="buttonGradient">
+                                <state key="normal" title="Help a friend vote" backgroundImage="buttonGradient">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="shareFacebook" destination="0PH-6T-vrq" eventType="touchUpInside" id="JNs-n8-v0A"/>
+                                    <action selector="shareApp:" destination="0PH-6T-vrq" eventType="touchUpInside" id="Wt7-FC-lCE"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -431,12 +526,12 @@ Election Day.</string>
             </objects>
             <point key="canvasLocation" x="2870" y="-583"/>
         </scene>
-        <!--View Controller-->
+        <!--ActionVC-->
         <scene sceneID="idX-fH-nu0">
             <objects>
-                <viewController id="Fwu-Cq-dX8" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ActionVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Fwu-Cq-dX8" customClass="ActionVC" customModule="iVote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="3nT-g9-yGr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flagHeader" translatesAutoresizingMaskIntoConstraints="NO" id="3kf-nb-gVF">
@@ -446,19 +541,22 @@ Election Day.</string>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iVoteHeader" translatesAutoresizingMaskIntoConstraints="NO" id="2CA-FG-3Pu">
-                                <rect key="frame" x="129.66666666666666" y="50" width="116" height="46"/>
+                                <rect key="frame" x="129.5" y="33" width="116" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="46" id="3Vb-J4-JZc"/>
                                     <constraint firstAttribute="width" constant="116" id="yQi-lz-VoG"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Xd4-28-G1h">
-                                <rect key="frame" x="15" y="43" width="60" height="60"/>
+                                <rect key="frame" x="15" y="26" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="AGC-nx-wop"/>
                                     <constraint firstAttribute="width" constant="60" id="Fgd-pY-ENK"/>
                                 </constraints>
                                 <state key="normal" image="backArrow"/>
+                                <connections>
+                                    <action selector="dismissVC" destination="Fwu-Cq-dX8" eventType="touchUpInside" id="9ib-Za-OTk"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Registration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EkG-Io-Lz4">
                                 <rect key="frame" x="0.0" y="112" width="375" height="67"/>
@@ -470,7 +568,7 @@ Election Day.</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TVl-lJ-XKO">
-                                <rect key="frame" x="0.0" y="179" width="375" height="599"/>
+                                <rect key="frame" x="0.0" y="179" width="375" height="488"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9wK-gl-WxF">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="520"/>
@@ -479,7 +577,7 @@ Election Day.</string>
                                             <constraint firstAttribute="height" constant="520" id="F8r-Oj-AaN"/>
                                         </constraints>
                                     </view>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="notRegisteredIcon" translatesAutoresizingMaskIntoConstraints="NO" id="0oy-2U-OkP">
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="0oy-2U-OkP">
                                         <rect key="frame" x="142" y="10" width="90" height="90"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="90" id="9sN-5a-x2L"/>
@@ -487,9 +585,9 @@ Election Day.</string>
                                         </constraints>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here are non-partisan resources that may be useful in filling out your ballot:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xhn-vn-E54">
-                                        <rect key="frame" x="45" y="100" width="284" height="115"/>
+                                        <rect key="frame" x="45" y="100" width="284" height="130"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="115" id="8W8-Ih-7Jy"/>
+                                            <constraint firstAttribute="height" constant="130" id="8W8-Ih-7Jy"/>
                                             <constraint firstAttribute="width" constant="284" id="gA4-iD-hTh"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="MuseoSansRounded-500" family="Museo Sans Rounded" pointSize="20"/>
@@ -512,6 +610,9 @@ Election Day.</string>
                                                 <real key="value" value="24"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="takeActionWithSender:" destination="Fwu-Cq-dX8" eventType="touchUpInside" id="3uu-Ox-m2u"/>
+                                        </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deadline: October 23, 2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dlS-YA-XGm">
                                         <rect key="frame" x="44" y="293" width="287" height="22"/>
@@ -522,7 +623,7 @@ Election Day.</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOf-RU-uQj">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gOf-RU-uQj">
                                         <rect key="frame" x="44" y="333" width="287" height="48"/>
                                         <color key="backgroundColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -538,8 +639,11 @@ Election Day.</string>
                                                 <real key="value" value="24"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="takeActionWithSender:" destination="Fwu-Cq-dX8" eventType="touchUpInside" id="Ywx-gE-fEg"/>
+                                        </connections>
                                     </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deadline: October 23, 2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaT-bf-aay">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Checked:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EaT-bf-aay">
                                         <rect key="frame" x="44" y="389" width="287" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="8bq-p4-Bzh"/>
@@ -564,6 +668,9 @@ Election Day.</string>
                                                 <real key="value" value="24"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <segue destination="F4m-Nh-kSc" kind="show" id="sOs-8d-RoQ"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -575,20 +682,20 @@ Election Day.</string>
                                     <constraint firstItem="xhn-vn-E54" firstAttribute="top" secondItem="TVl-lJ-XKO" secondAttribute="top" constant="100" id="Dq7-CA-T3U"/>
                                     <constraint firstItem="dlS-YA-XGm" firstAttribute="top" secondItem="RUA-3a-1Rl" secondAttribute="bottom" constant="8" id="JrY-YH-ut8"/>
                                     <constraint firstItem="ryQ-k4-jNC" firstAttribute="bottom" secondItem="9wK-gl-WxF" secondAttribute="bottom" constant="-43" id="KdC-CA-DrN"/>
-                                    <constraint firstItem="ryQ-k4-jNC" firstAttribute="top" secondItem="gOf-RU-uQj" secondAttribute="bottom" constant="48" id="MuY-gw-mlG"/>
                                     <constraint firstItem="dlS-YA-XGm" firstAttribute="trailing" secondItem="RUA-3a-1Rl" secondAttribute="trailing" id="PIL-Ea-gek"/>
                                     <constraint firstItem="dlS-YA-XGm" firstAttribute="leading" secondItem="RUA-3a-1Rl" secondAttribute="leading" id="PhU-vk-vV8"/>
                                     <constraint firstItem="xhn-vn-E54" firstAttribute="centerX" secondItem="TVl-lJ-XKO" secondAttribute="centerX" id="RXn-Pi-leC"/>
                                     <constraint firstItem="9wK-gl-WxF" firstAttribute="top" secondItem="TVl-lJ-XKO" secondAttribute="top" id="V60-rt-4nu"/>
                                     <constraint firstItem="gOf-RU-uQj" firstAttribute="centerX" secondItem="TVl-lJ-XKO" secondAttribute="centerX" id="VMN-ui-9pM"/>
+                                    <constraint firstItem="gOf-RU-uQj" firstAttribute="top" secondItem="xhn-vn-E54" secondAttribute="bottom" constant="103" id="WL1-fd-XWY"/>
                                     <constraint firstItem="ryQ-k4-jNC" firstAttribute="centerX" secondItem="TVl-lJ-XKO" secondAttribute="centerX" id="WZV-wl-TmL"/>
-                                    <constraint firstItem="gOf-RU-uQj" firstAttribute="top" secondItem="RUA-3a-1Rl" secondAttribute="bottom" constant="48" id="YK6-OZ-wvv"/>
                                     <constraint firstItem="9wK-gl-WxF" firstAttribute="leading" secondItem="TVl-lJ-XKO" secondAttribute="leading" id="grR-f1-48m"/>
                                     <constraint firstItem="EaT-bf-aay" firstAttribute="top" secondItem="gOf-RU-uQj" secondAttribute="bottom" constant="8" id="h4r-Tl-ghD"/>
                                     <constraint firstItem="0oy-2U-OkP" firstAttribute="top" secondItem="TVl-lJ-XKO" secondAttribute="top" constant="10" id="k6E-JA-mxB"/>
                                     <constraint firstItem="0oy-2U-OkP" firstAttribute="centerX" secondItem="TVl-lJ-XKO" secondAttribute="centerX" id="kMH-F4-XD2"/>
+                                    <constraint firstItem="ryQ-k4-jNC" firstAttribute="top" secondItem="RUA-3a-1Rl" secondAttribute="bottom" constant="144" id="l7g-eA-9oe"/>
                                     <constraint firstItem="RUA-3a-1Rl" firstAttribute="centerX" secondItem="TVl-lJ-XKO" secondAttribute="centerX" id="lVC-4V-Eqx"/>
-                                    <constraint firstItem="RUA-3a-1Rl" firstAttribute="top" secondItem="xhn-vn-E54" secondAttribute="bottom" constant="22" id="mTW-Aj-tiw"/>
+                                    <constraint firstItem="RUA-3a-1Rl" firstAttribute="top" secondItem="xhn-vn-E54" secondAttribute="bottom" constant="7" id="mTW-Aj-tiw"/>
                                 </constraints>
                             </scrollView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JuE-DO-zcN">
@@ -623,6 +730,20 @@ Election Day.</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ggp-hE-Syo"/>
                     </view>
+                    <connections>
+                        <outlet property="actionBut" destination="RUA-3a-1Rl" id="drc-Pg-2aC"/>
+                        <outlet property="actionLabel" destination="dlS-YA-XGm" id="4cS-8p-7dE"/>
+                        <outlet property="changeStatusBut" destination="ryQ-k4-jNC" id="xdA-44-7aR"/>
+                        <outlet property="changeStatusTopSpace" destination="l7g-eA-9oe" id="LnI-xL-MyB"/>
+                        <outlet property="checkStatusBut" destination="gOf-RU-uQj" id="Ll2-vg-K6I"/>
+                        <outlet property="checkStatusLabel" destination="EaT-bf-aay" id="x4x-kn-wPX"/>
+                        <outlet property="checkStatusTopSpace" destination="WL1-fd-XWY" id="XbR-Qd-xqZ"/>
+                        <outlet property="headerImg" destination="0oy-2U-OkP" id="4M5-Yk-04b"/>
+                        <outlet property="headerLabel" destination="EkG-Io-Lz4" id="jdt-1x-Qke"/>
+                        <outlet property="headerStatus" destination="xhn-vn-E54" id="DhQ-eP-CCW"/>
+                        <segue destination="HV2-A1-Da4" kind="show" identifier="OpenWebVC" id="Rde-RP-aSo"/>
+                        <segue destination="0PH-6T-vrq" kind="show" identifier="OpenElectionResources" id="o8O-Fo-5wL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Yxn-HN-G2J" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -633,7 +754,7 @@ Election Day.</string>
             <objects>
                 <viewController storyboardIdentifier="HomeVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mdc-La-MlV" customClass="HomeVC" customModule="iVote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MwZ-Nb-qKb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flagHeader" translatesAutoresizingMaskIntoConstraints="NO" id="Few-96-9P8">
@@ -643,14 +764,14 @@ Election Day.</string>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iVoteHeader" translatesAutoresizingMaskIntoConstraints="NO" id="dAN-2G-tkl">
-                                <rect key="frame" x="129.66666666666666" y="50" width="116" height="46"/>
+                                <rect key="frame" x="129.5" y="33" width="116" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="116" id="5xb-xW-EDp"/>
                                     <constraint firstAttribute="height" constant="46" id="wah-Ul-4ii"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nEj-Aa-rfE">
-                                <rect key="frame" x="15" y="43" width="60" height="60"/>
+                                <rect key="frame" x="15" y="26" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="MdS-y2-IYT"/>
                                     <constraint firstAttribute="height" constant="60" id="dOt-Ve-oFk"/>
@@ -661,7 +782,7 @@ Election Day.</string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uiK-P4-seL">
-                                <rect key="frame" x="0.0" y="163" width="375" height="68"/>
+                                <rect key="frame" x="0.0" y="122" width="375" height="68"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="68" id="c57-j2-bzX"/>
                                 </constraints>
@@ -672,14 +793,14 @@ November 6, 2018</string>
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eBl-cN-1V9">
-                                <rect key="frame" x="0.0" y="272" width="375" height="1"/>
+                                <rect key="frame" x="0.0" y="196" width="375" height="1"/>
                                 <color key="backgroundColor" red="0.94117647059999998" green="0.94117647059999998" blue="0.94117647059999998" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="K6V-XU-QX8"/>
                                 </constraints>
                             </view>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6b8-rl-fyD">
-                                <rect key="frame" x="0.0" y="273" width="375" height="440"/>
+                                <rect key="frame" x="0.0" y="197" width="375" height="405"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5uZ-yo-Z5S">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="520"/>
@@ -715,7 +836,7 @@ November 6, 2018</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="registerAction" destination="Mdc-La-MlV" eventType="touchUpInside" id="Muc-5U-WYU"/>
+                                            <segue destination="Fwu-Cq-dX8" kind="show" id="qWr-gw-Q2f"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deadline: October 23, 2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cHp-03-JiZ">
@@ -727,7 +848,7 @@ November 6, 2018</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTc-tG-DtI">
+                                    <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wTc-tG-DtI">
                                         <rect key="frame" x="44" y="200" width="287" height="48"/>
                                         <color key="backgroundColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -744,7 +865,7 @@ November 6, 2018</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="mailInBallotAction" destination="Mdc-La-MlV" eventType="touchUpInside" id="ecd-gg-B9D"/>
+                                            <segue destination="Fwu-Cq-dX8" kind="show" id="2VT-jm-kPi"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deadline: October 23, 2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8qt-fg-F3m">
@@ -756,7 +877,7 @@ November 6, 2018</string>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBb-g7-IFr">
+                                    <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tBb-g7-IFr">
                                         <rect key="frame" x="44" y="296" width="287" height="48"/>
                                         <color key="backgroundColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
@@ -773,11 +894,11 @@ November 6, 2018</string>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <action selector="submitBallotAction" destination="Mdc-La-MlV" eventType="touchUpInside" id="ziH-a3-Vu6"/>
+                                            <segue destination="Fwu-Cq-dX8" kind="show" id="Iz5-6L-EAT"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Deadline: October 23, 2018" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rps-rM-DYO">
-                                        <rect key="frame" x="43.666666666666657" y="352" width="287" height="22"/>
+                                        <rect key="frame" x="43.5" y="352" width="287" height="22"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="22" id="5td-vM-YJV"/>
                                         </constraints>
@@ -812,17 +933,18 @@ November 6, 2018</string>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2B7-cs-llU">
-                                <rect key="frame" x="0.0" y="713" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="602" width="375" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="TXf-c5-ogW"/>
                                 </constraints>
+                                <fontDescription key="fontDescription" name="MuseoSansRounded-900" family="Museo Sans Rounded" pointSize="20"/>
                                 <inset key="titleEdgeInsets" minX="7" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <inset key="imageEdgeInsets" minX="-10" minY="0.0" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Share to Facebook" image="fbIcon" backgroundImage="buttonGradient">
+                                <state key="normal" title="Help a friend vote" backgroundImage="buttonGradient">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <action selector="shareAction" destination="Mdc-La-MlV" eventType="touchUpInside" id="RkE-vM-mFD"/>
+                                    <action selector="shareApp:" destination="Mdc-La-MlV" eventType="touchUpInside" id="aJR-Ha-tyc"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -831,7 +953,7 @@ November 6, 2018</string>
                             <constraint firstItem="5uZ-yo-Z5S" firstAttribute="width" secondItem="eBl-cN-1V9" secondAttribute="width" id="0Zr-g1-O92"/>
                             <constraint firstItem="6b8-rl-fyD" firstAttribute="trailing" secondItem="pPU-6H-z6I" secondAttribute="trailing" id="0dt-bg-Y2q"/>
                             <constraint firstItem="dAN-2G-tkl" firstAttribute="centerY" secondItem="Few-96-9P8" secondAttribute="centerY" priority="750" id="3np-P1-hUJ"/>
-                            <constraint firstItem="6b8-rl-fyD" firstAttribute="top" secondItem="uiK-P4-seL" secondAttribute="bottom" constant="42" id="9wL-zq-MHR"/>
+                            <constraint firstItem="6b8-rl-fyD" firstAttribute="top" secondItem="uiK-P4-seL" secondAttribute="bottom" constant="7" id="9wL-zq-MHR"/>
                             <constraint firstItem="nEj-Aa-rfE" firstAttribute="leading" secondItem="pPU-6H-z6I" secondAttribute="leading" constant="15" id="Bcc-6C-BgM"/>
                             <constraint firstItem="eBl-cN-1V9" firstAttribute="leading" secondItem="pPU-6H-z6I" secondAttribute="leading" id="ErJ-JL-upc"/>
                             <constraint firstItem="6b8-rl-fyD" firstAttribute="leading" secondItem="pPU-6H-z6I" secondAttribute="leading" id="FML-MY-Mlv"/>
@@ -844,22 +966,22 @@ November 6, 2018</string>
                             <constraint firstItem="uiK-P4-seL" firstAttribute="leading" secondItem="pPU-6H-z6I" secondAttribute="leading" id="Ws6-9L-T8o"/>
                             <constraint firstItem="Few-96-9P8" firstAttribute="top" secondItem="MwZ-Nb-qKb" secondAttribute="top" id="Xd0-Wu-8dk"/>
                             <constraint firstItem="pPU-6H-z6I" firstAttribute="trailing" secondItem="uiK-P4-seL" secondAttribute="trailing" id="Xfk-Yt-6nD"/>
-                            <constraint firstItem="eBl-cN-1V9" firstAttribute="top" secondItem="uiK-P4-seL" secondAttribute="bottom" constant="41" id="fzm-mm-kRX"/>
+                            <constraint firstItem="eBl-cN-1V9" firstAttribute="top" secondItem="uiK-P4-seL" secondAttribute="bottom" constant="6" id="fzm-mm-kRX"/>
                             <constraint firstItem="dAN-2G-tkl" firstAttribute="top" relation="greaterThanOrEqual" secondItem="pPU-6H-z6I" secondAttribute="top" constant="6" id="hS7-bm-CYG"/>
                             <constraint firstItem="dAN-2G-tkl" firstAttribute="centerY" secondItem="nEj-Aa-rfE" secondAttribute="centerY" id="hmI-aB-fpa"/>
                             <constraint firstItem="2B7-cs-llU" firstAttribute="leading" secondItem="pPU-6H-z6I" secondAttribute="leading" id="n9i-F1-Gap"/>
                             <constraint firstItem="2B7-cs-llU" firstAttribute="trailing" secondItem="pPU-6H-z6I" secondAttribute="trailing" id="ob8-Gb-z3f"/>
-                            <constraint firstItem="uiK-P4-seL" firstAttribute="top" secondItem="Few-96-9P8" secondAttribute="bottom" constant="51" id="y5F-Pe-t5f"/>
+                            <constraint firstItem="uiK-P4-seL" firstAttribute="top" secondItem="Few-96-9P8" secondAttribute="bottom" constant="10" id="y5F-Pe-t5f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="pPU-6H-z6I"/>
                     </view>
                     <connections>
                         <outlet property="electionDateLabel" destination="uiK-P4-seL" id="2gg-al-sJw"/>
-                        <outlet property="facebookButton" destination="2B7-cs-llU" id="HId-ip-pBc"/>
                         <outlet property="mailInBallotButton" destination="wTc-tG-DtI" id="TCB-6B-pfe"/>
                         <outlet property="mailInBallotLabel" destination="8qt-fg-F3m" id="704-5n-ZBU"/>
                         <outlet property="registrationButton" destination="NQi-qf-qcU" id="GR1-6V-1So"/>
                         <outlet property="registrationLabel" destination="cHp-03-JiZ" id="XfB-xO-TP0"/>
+                        <outlet property="shareButton" destination="2B7-cs-llU" id="auA-Hf-qRG"/>
                         <outlet property="submitBallotButton" destination="tBb-g7-IFr" id="6Jt-YK-zum"/>
                         <outlet property="submitBallotLabel" destination="rps-rM-DYO" id="npK-Gz-tKZ"/>
                         <outlet property="votingLabel" destination="r3V-lB-xnL" id="Uh9-HR-Ytd"/>
@@ -874,7 +996,7 @@ November 6, 2018</string>
             <objects>
                 <viewController id="HEb-gL-R8A" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LdH-Ze-vhk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QnC-eX-KdA">
@@ -884,7 +1006,7 @@ November 6, 2018</string>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iVoteHeader" translatesAutoresizingMaskIntoConstraints="NO" id="tk6-zW-vbU">
-                                <rect key="frame" x="129.66666666666666" y="33" width="116" height="46"/>
+                                <rect key="frame" x="129.5" y="33" width="116" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="116" id="2ET-ZQ-z9k"/>
                                     <constraint firstAttribute="height" constant="46" id="Hpj-aW-yZt"/>
@@ -915,7 +1037,7 @@ November 6, 2018</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Here are non-partisan resources that may be useful in filling out your ballot:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HfP-na-JSq">
-                                <rect key="frame" x="45.666666666666657" y="204" width="284" height="100"/>
+                                <rect key="frame" x="45.5" y="204" width="284" height="100"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="100" id="QB3-ib-reO"/>
                                     <constraint firstAttribute="width" constant="284" id="tUX-Ln-DoE"/>
@@ -976,11 +1098,11 @@ November 6, 2018</string>
                                 </userDefinedRuntimeAttributes>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w1E-Ad-i2f">
-                                <rect key="frame" x="0.0" y="713" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="602" width="375" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="vMw-OS-xzZ"/>
                                 </constraints>
-                                <state key="normal" title="Share to Facebook"/>
+                                <state key="normal" title="share"/>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -1028,7 +1150,7 @@ November 6, 2018</string>
             <objects>
                 <viewController storyboardIdentifier="AboutVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="qBo-zY-4Dm" customClass="AboutVC" customModule="iVote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gKO-nw-7WA">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flagHeader" translatesAutoresizingMaskIntoConstraints="NO" id="rpY-oS-Quj">
@@ -1038,14 +1160,14 @@ November 6, 2018</string>
                                 </constraints>
                             </imageView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iVoteHeader" translatesAutoresizingMaskIntoConstraints="NO" id="ZRY-NA-Mg1">
-                                <rect key="frame" x="129.66666666666666" y="50" width="116" height="46"/>
+                                <rect key="frame" x="129.5" y="33" width="116" height="46"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="116" id="7LG-GX-MN9"/>
                                     <constraint firstAttribute="height" constant="46" id="HFS-Ot-Ojb"/>
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zap-qf-5Bl">
-                                <rect key="frame" x="15" y="43" width="60" height="60"/>
+                                <rect key="frame" x="15" y="26" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="7eN-uq-F0D"/>
                                     <constraint firstAttribute="width" constant="60" id="vy9-jn-Nne"/>
@@ -1072,7 +1194,7 @@ November 6, 2018</string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fg7-T1-joR">
-                                <rect key="frame" x="45.666666666666657" y="204" width="284" height="350"/>
+                                <rect key="frame" x="45.5" y="204" width="284" height="350"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="284" id="5vG-gr-iPk"/>
                                     <constraint firstAttribute="height" constant="350" id="sFH-c3-fLK"/>
@@ -1104,6 +1226,9 @@ November 6, 2018</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="KhE-BG-6xJ"/>
                     </view>
+                    <connections>
+                        <outlet property="aboutLabel" destination="fg7-T1-joR" id="cwD-jS-hFz"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TqD-LZ-vl1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1112,19 +1237,19 @@ November 6, 2018</string>
         <!--SettingsVC-->
         <scene sceneID="PyL-Zb-l6D">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="cWD-yB-Jxk" customClass="SettingsVC" customModule="iVote" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="cWD-yB-Jxk" customClass="SettingsVC" customModule="iVote" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2Hu-bP-kq6">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CTs-KR-2pH">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="713"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" keyboardDismissMode="interactive" translatesAutoresizingMaskIntoConstraints="NO" id="CTs-KR-2pH">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="602"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eVF-Go-TBu">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="734"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flagBackground" translatesAutoresizingMaskIntoConstraints="NO" id="39E-vd-tmr">
-                                                <rect key="frame" x="0.0" y="0.0" width="375" height="414"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="375" height="283"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1134,14 +1259,13 @@ November 6, 2018</string>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
                                             </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KX-5k-7Z3">
-                                                <rect key="frame" x="44" y="631" width="287" height="48"/>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5KX-5k-7Z3">
+                                                <rect key="frame" x="44" y="500" width="287" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="287" id="FKG-ky-Aie"/>
                                                     <constraint firstAttribute="height" constant="48" id="eSj-lz-2sN"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" name="MuseoSansRounded-500" family="Museo Sans Rounded" pointSize="20"/>
-                                                <inset key="titleEdgeInsets" minX="-165" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <inset key="imageEdgeInsets" minX="240" minY="0.0" maxX="0.0" maxY="0.0"/>
                                                 <state key="normal" title="Select State" image="downArrow">
                                                     <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1165,14 +1289,14 @@ November 6, 2018</string>
                                                 </connections>
                                             </button>
                                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="rEd-yr-uTL" customClass="IndentedTextField" customModule="iVote" customModuleProvider="target">
-                                                <rect key="frame" x="44" y="545" width="287" height="48"/>
+                                                <rect key="frame" x="44" y="414" width="287" height="48"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="48" id="Aoj-oe-Uf6"/>
                                                     <constraint firstAttribute="width" constant="287" id="bHj-eG-ngl"/>
                                                 </constraints>
                                                 <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="MuseoSansRounded-500" family="Museo Sans Rounded" pointSize="20"/>
-                                                <textInputTraits key="textInputTraits"/>
+                                                <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                 <userDefinedRuntimeAttributes>
                                                     <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                                         <color key="value" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -1187,9 +1311,12 @@ November 6, 2018</string>
                                                         <real key="value" value="28"/>
                                                     </userDefinedRuntimeAttribute>
                                                 </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="cWD-yB-Jxk" id="yhw-In-OFE"/>
+                                                </connections>
                                             </textField>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your first name and select your state of residence:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DX4-ch-eIg">
-                                                <rect key="frame" x="27" y="458" width="320" height="68"/>
+                                                <rect key="frame" x="27" y="327" width="320" height="68"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="68" id="Ifv-aF-UKB"/>
                                                     <constraint firstAttribute="width" constant="320" id="dFM-6S-ZqX"/>
@@ -1199,14 +1326,14 @@ November 6, 2018</string>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iVoteLogoBig" translatesAutoresizingMaskIntoConstraints="NO" id="iwa-y7-nRV">
-                                                <rect key="frame" x="68" y="182" width="238" height="95"/>
+                                                <rect key="frame" x="68.5" y="116.5" width="237.5" height="95"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" priority="750" constant="94" id="7Yc-XA-j7i"/>
                                                     <constraint firstAttribute="width" priority="750" constant="238" id="DPF-NN-mtP"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v3j-1I-aRv">
-                                                <rect key="frame" x="47" y="132" width="280" height="40"/>
+                                                <rect key="frame" x="47" y="66.5" width="280" height="40"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="280" id="fww-Oa-dgk"/>
                                                     <constraint firstAttribute="height" constant="40" id="gXt-pP-HCW"/>
@@ -1245,15 +1372,18 @@ November 6, 2018</string>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A5G-eD-Zlr">
-                                <rect key="frame" x="0.0" y="713" width="375" height="65"/>
+                                <rect key="frame" x="0.0" y="602" width="375" height="65"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="65" id="DrD-B1-Anm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="MuseoSansRounded-900" family="Museo Sans Rounded" pointSize="20"/>
                                 <state key="normal" title="Continue" backgroundImage="buttonGradient"/>
+                                <connections>
+                                    <action selector="continueHome" destination="cWD-yB-Jxk" eventType="touchUpInside" id="Uhx-tf-Fgb"/>
+                                </connections>
                             </button>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEk-Lj-tQA">
-                                <rect key="frame" x="0.0" y="778" width="375" height="162"/>
+                                <rect key="frame" x="0.0" y="667" width="375" height="162"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="162" id="hl5-8n-VL4"/>
@@ -1275,36 +1405,246 @@ November 6, 2018</string>
                             <constraint firstItem="A5G-eD-Zlr" firstAttribute="leading" secondItem="uAM-Dt-o7G" secondAttribute="leading" id="Tpi-Gt-lhh"/>
                             <constraint firstItem="CTs-KR-2pH" firstAttribute="leading" secondItem="uAM-Dt-o7G" secondAttribute="leading" id="aVP-7c-GH9"/>
                             <constraint firstItem="uAM-Dt-o7G" firstAttribute="trailing" secondItem="A5G-eD-Zlr" secondAttribute="trailing" id="cf0-z8-vsV"/>
-                            <constraint firstItem="eVF-Go-TBu" firstAttribute="height" secondItem="uAM-Dt-o7G" secondAttribute="height" id="gsA-xT-lti"/>
                             <constraint firstItem="aEk-Lj-tQA" firstAttribute="trailing" secondItem="uAM-Dt-o7G" secondAttribute="trailing" id="hhe-nk-avK"/>
+                            <constraint firstItem="eVF-Go-TBu" firstAttribute="height" secondItem="2Hu-bP-kq6" secondAttribute="height" constant="-64" id="ly3-07-ncu"/>
                             <constraint firstItem="uAM-Dt-o7G" firstAttribute="bottom" secondItem="aEk-Lj-tQA" secondAttribute="bottom" constant="-162" id="pVv-wn-bfd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="uAM-Dt-o7G"/>
                     </view>
                     <connections>
+                        <outlet property="continueBut" destination="A5G-eD-Zlr" id="lQK-Am-aHe"/>
+                        <outlet property="firstNameTF" destination="rEd-yr-uTL" id="W8a-tb-W7V"/>
                         <outlet property="picker" destination="aEk-Lj-tQA" id="tGL-gE-F2f"/>
                         <outlet property="pickerBottomSpace" destination="pVv-wn-bfd" id="U7M-KG-lxN"/>
                         <outlet property="scrollView" destination="CTs-KR-2pH" id="fk7-lB-RM9"/>
                         <outlet property="selectStateBut" destination="5KX-5k-7Z3" id="Bnx-oR-N9c"/>
-                        <segue destination="Mdc-La-MlV" kind="showDetail" identifier="OpenMenu" id="fCC-9I-Zt8"/>
+                        <segue destination="Mdc-La-MlV" kind="showDetail" identifier="OpenHome" id="fCC-9I-Zt8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RQy-tL-86T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="116" y="821"/>
         </scene>
+        <!--SettingsVC-->
+        <scene sceneID="fpP-5J-l8r">
+            <objects>
+                <viewController storyboardIdentifier="SettingsVC" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="h69-cf-ISi" customClass="SettingsVC" customModule="iVote" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="53p-3q-c3W">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mwy-ZR-MW8">
+                                <rect key="frame" x="0.0" y="112" width="375" height="490"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="arc-Ks-4eD">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="514"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8VL-IZ-nEX">
+                                                <rect key="frame" x="44" y="286" width="287" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="48" id="L5X-Ik-NXG"/>
+                                                    <constraint firstAttribute="width" constant="287" id="iQ5-9l-l7G"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="MuseoSansRounded-500" family="Museo Sans Rounded" pointSize="20"/>
+                                                <inset key="imageEdgeInsets" minX="240" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                <state key="normal" title="Select State" image="downArrow">
+                                                    <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="24"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="titleLabel.textAlignment">
+                                                        <integer key="value" value="0"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <action selector="showPicker" destination="h69-cf-ISi" eventType="touchUpInside" id="4Gi-f4-RkH"/>
+                                                </connections>
+                                            </button>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="First Name" placeholder="First Name" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="oHn-jT-baM" customClass="IndentedTextField" customModule="iVote" customModuleProvider="target">
+                                                <rect key="frame" x="44" y="200" width="287" height="48"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="287" id="37K-jT-mNU"/>
+                                                    <constraint firstAttribute="height" constant="48" id="qie-hk-fcf"/>
+                                                </constraints>
+                                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="MuseoSansRounded-500" family="Museo Sans Rounded" pointSize="20"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                                <userDefinedRuntimeAttributes>
+                                                    <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                        <color key="value" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                        <real key="value" value="24"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                        <real key="value" value="1"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                    <userDefinedRuntimeAttribute type="number" keyPath="textLeftIndent">
+                                                        <real key="value" value="28"/>
+                                                    </userDefinedRuntimeAttribute>
+                                                </userDefinedRuntimeAttributes>
+                                                <connections>
+                                                    <outlet property="delegate" destination="h69-cf-ISi" id="nCL-Mc-jf7"/>
+                                                </connections>
+                                            </textField>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter your first name and select your state of residence:" textAlignment="center" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B0B-ak-uRs">
+                                                <rect key="frame" x="27" y="113" width="320" height="68"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="320" id="fT2-Xh-QaV"/>
+                                                    <constraint firstAttribute="height" constant="68" id="g4X-Rv-U4Z"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="MuseoSansRounded-500" family="Museo Sans Rounded" pointSize="20"/>
+                                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fou-1W-HP2">
+                                                <rect key="frame" x="47" y="15" width="280" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="280" id="28h-4y-spn"/>
+                                                    <constraint firstAttribute="height" constant="40" id="PLy-Xu-ia5"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="MuseoSansRounded-500" family="Museo Sans Rounded" pointSize="32"/>
+                                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="z1m-CW-Lu2">
+                                                <rect key="frame" x="0.0" y="68" width="375" height="1"/>
+                                                <color key="backgroundColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="1" id="2A6-oZ-jAc"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="z1m-CW-Lu2" secondAttribute="trailing" id="9mM-NP-loz"/>
+                                            <constraint firstItem="z1m-CW-Lu2" firstAttribute="top" secondItem="Fou-1W-HP2" secondAttribute="bottom" constant="13" id="AYo-kf-l7n"/>
+                                            <constraint firstItem="z1m-CW-Lu2" firstAttribute="leading" secondItem="arc-Ks-4eD" secondAttribute="leading" id="CS6-VC-dJI"/>
+                                            <constraint firstItem="Fou-1W-HP2" firstAttribute="centerX" secondItem="arc-Ks-4eD" secondAttribute="centerX" id="Lpp-m1-9YO"/>
+                                            <constraint firstItem="8VL-IZ-nEX" firstAttribute="top" secondItem="oHn-jT-baM" secondAttribute="bottom" constant="38" id="Zn5-JB-T3W"/>
+                                            <constraint firstItem="8VL-IZ-nEX" firstAttribute="centerX" secondItem="arc-Ks-4eD" secondAttribute="centerX" id="bHY-8W-EuD"/>
+                                            <constraint firstItem="B0B-ak-uRs" firstAttribute="top" secondItem="z1m-CW-Lu2" secondAttribute="bottom" constant="44" id="eeJ-FQ-Rt5"/>
+                                            <constraint firstItem="oHn-jT-baM" firstAttribute="top" secondItem="B0B-ak-uRs" secondAttribute="bottom" constant="19" id="jS2-px-k6o"/>
+                                            <constraint firstItem="Fou-1W-HP2" firstAttribute="top" secondItem="arc-Ks-4eD" secondAttribute="top" constant="15" id="lc3-Cs-ezN"/>
+                                            <constraint firstItem="oHn-jT-baM" firstAttribute="centerX" secondItem="arc-Ks-4eD" secondAttribute="centerX" id="mSk-VN-cpZ"/>
+                                            <constraint firstItem="B0B-ak-uRs" firstAttribute="centerX" secondItem="arc-Ks-4eD" secondAttribute="centerX" id="wca-2A-i4G"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="arc-Ks-4eD" secondAttribute="bottom" id="0TS-wM-Nq1"/>
+                                    <constraint firstItem="arc-Ks-4eD" firstAttribute="top" secondItem="mwy-ZR-MW8" secondAttribute="top" id="FIC-lG-oTo"/>
+                                    <constraint firstAttribute="trailing" secondItem="arc-Ks-4eD" secondAttribute="trailing" id="NuE-7l-naE"/>
+                                    <constraint firstItem="arc-Ks-4eD" firstAttribute="leading" secondItem="mwy-ZR-MW8" secondAttribute="leading" id="j8o-N9-U8Z"/>
+                                </constraints>
+                            </scrollView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JdM-eq-sCQ">
+                                <rect key="frame" x="15" y="26" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Ebk-kf-a4k"/>
+                                    <constraint firstAttribute="width" constant="60" id="aeA-0R-fLY"/>
+                                </constraints>
+                                <state key="normal" image="backArrow"/>
+                                <connections>
+                                    <action selector="dismissVC" destination="h69-cf-ISi" eventType="touchUpInside" id="pGE-D4-KhV"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iVoteHeader" translatesAutoresizingMaskIntoConstraints="NO" id="hq4-vT-1sY">
+                                <rect key="frame" x="129" y="33" width="116" height="46"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="46" id="CMo-Rw-mk8"/>
+                                    <constraint firstAttribute="width" constant="116" id="j82-sO-FkV"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="flagHeader" translatesAutoresizingMaskIntoConstraints="NO" id="tEz-Ve-3mh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="112"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="112" id="zbl-Zh-Uj0"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ya2-Rv-Htv">
+                                <rect key="frame" x="0.0" y="602" width="375" height="65"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="65" id="4jx-6d-O7a"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="MuseoSansRounded-900" family="Museo Sans Rounded" pointSize="20"/>
+                                <state key="normal" title="Save" backgroundImage="buttonGradient"/>
+                                <connections>
+                                    <action selector="dismissVC" destination="h69-cf-ISi" eventType="touchUpInside" id="z1Q-gT-PAx"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uNw-uL-nnC">
+                                <rect key="frame" x="0.0" y="667" width="375" height="162"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="162" id="qHm-d4-kxV"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="h69-cf-ISi" id="L93-73-4Sw"/>
+                                    <outlet property="delegate" destination="h69-cf-ISi" id="F9e-Qa-AvJ"/>
+                                </connections>
+                            </pickerView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="tEz-Ve-3mh" firstAttribute="top" secondItem="53p-3q-c3W" secondAttribute="top" id="2CF-0k-EZ8"/>
+                            <constraint firstItem="tEz-Ve-3mh" firstAttribute="leading" secondItem="fqK-Qb-kDo" secondAttribute="leading" id="2Cz-Xu-oEF"/>
+                            <constraint firstItem="arc-Ks-4eD" firstAttribute="width" secondItem="fqK-Qb-kDo" secondAttribute="width" id="4mL-8S-z2q"/>
+                            <constraint firstItem="mwy-ZR-MW8" firstAttribute="leading" secondItem="fqK-Qb-kDo" secondAttribute="leading" id="6G9-aW-j6T"/>
+                            <constraint firstItem="tEz-Ve-3mh" firstAttribute="trailing" secondItem="fqK-Qb-kDo" secondAttribute="trailing" id="EjJ-rV-O5s"/>
+                            <constraint firstItem="uNw-uL-nnC" firstAttribute="trailing" secondItem="fqK-Qb-kDo" secondAttribute="trailing" id="HBu-2I-j9G"/>
+                            <constraint firstItem="arc-Ks-4eD" firstAttribute="height" secondItem="fqK-Qb-kDo" secondAttribute="height" constant="-133" id="Hdu-xS-x7B"/>
+                            <constraint firstItem="ya2-Rv-Htv" firstAttribute="top" secondItem="mwy-ZR-MW8" secondAttribute="bottom" id="IT3-Us-ale"/>
+                            <constraint firstItem="mwy-ZR-MW8" firstAttribute="trailing" secondItem="fqK-Qb-kDo" secondAttribute="trailing" id="KUw-jA-agc"/>
+                            <constraint firstItem="fqK-Qb-kDo" firstAttribute="bottom" secondItem="ya2-Rv-Htv" secondAttribute="bottom" id="PPQ-0P-nT9"/>
+                            <constraint firstItem="fqK-Qb-kDo" firstAttribute="trailing" secondItem="ya2-Rv-Htv" secondAttribute="trailing" id="Zj8-tO-YnG"/>
+                            <constraint firstItem="ya2-Rv-Htv" firstAttribute="leading" secondItem="fqK-Qb-kDo" secondAttribute="leading" id="cTr-ho-ChM"/>
+                            <constraint firstItem="fqK-Qb-kDo" firstAttribute="bottom" secondItem="uNw-uL-nnC" secondAttribute="bottom" constant="-162" id="gST-EX-gsj"/>
+                            <constraint firstItem="hq4-vT-1sY" firstAttribute="top" relation="greaterThanOrEqual" secondItem="fqK-Qb-kDo" secondAttribute="top" constant="6" id="jat-7I-vAT"/>
+                            <constraint firstItem="JdM-eq-sCQ" firstAttribute="leading" secondItem="fqK-Qb-kDo" secondAttribute="leading" constant="15" id="mRh-Vd-kUk"/>
+                            <constraint firstItem="uNw-uL-nnC" firstAttribute="leading" secondItem="fqK-Qb-kDo" secondAttribute="leading" id="mf5-ZT-7DO"/>
+                            <constraint firstItem="mwy-ZR-MW8" firstAttribute="top" secondItem="tEz-Ve-3mh" secondAttribute="bottom" id="ny6-vD-BzR"/>
+                            <constraint firstItem="hq4-vT-1sY" firstAttribute="centerX" secondItem="tEz-Ve-3mh" secondAttribute="centerX" id="p2Y-Ln-3mZ"/>
+                            <constraint firstItem="hq4-vT-1sY" firstAttribute="centerY" secondItem="JdM-eq-sCQ" secondAttribute="centerY" id="vHk-Bd-sU8"/>
+                            <constraint firstItem="hq4-vT-1sY" firstAttribute="centerY" secondItem="tEz-Ve-3mh" secondAttribute="centerY" priority="750" id="x8q-zk-AHA"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="fqK-Qb-kDo"/>
+                    </view>
+                    <connections>
+                        <outlet property="continueBut" destination="ya2-Rv-Htv" id="NP2-0f-XeM"/>
+                        <outlet property="firstNameTF" destination="oHn-jT-baM" id="cqu-4K-Vo6"/>
+                        <outlet property="picker" destination="uNw-uL-nnC" id="bSU-lI-u65"/>
+                        <outlet property="pickerBottomSpace" destination="gST-EX-gsj" id="GJh-Mi-73K"/>
+                        <outlet property="scrollView" destination="mwy-ZR-MW8" id="cdP-hL-h4F"/>
+                        <outlet property="selectStateBut" destination="8VL-IZ-nEX" id="Mpo-aB-4uv"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mjw-Yq-ecb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2870" y="-1303"/>
+        </scene>
     </scenes>
     <resources>
         <image name="backArrow" width="14" height="23"/>
         <image name="buttonGradient" width="375" height="65"/>
         <image name="downArrow" width="22" height="11"/>
-        <image name="fbIcon" width="32" height="32"/>
         <image name="flagBackground" width="375" height="442"/>
         <image name="flagHeader" width="375" height="112"/>
         <image name="iVoteHeader" width="117" height="47"/>
         <image name="iVoteLogoBig" width="238" height="95"/>
         <image name="menuIcon" width="28" height="23"/>
-        <image name="notRegisteredIcon" width="90" height="90"/>
         <image name="xOutButton" width="19" height="19"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="2VT-jm-kPi"/>
+        <segue reference="o8O-Fo-5wL"/>
+    </inferredMetricsTieBreakers>
 </document>

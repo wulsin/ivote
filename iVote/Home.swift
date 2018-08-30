@@ -13,6 +13,8 @@ import UIKit
 class HomeVC: UIViewController {
     
     //MARK: Variables & Constants
+    /** Current User Object */
+    var user : User?
     
     /** Label indicating election date. */
     @IBOutlet var electionDateLabel: UILabel!
@@ -38,12 +40,24 @@ class HomeVC: UIViewController {
     /** Button indicating submit ballot status. */
     @IBOutlet var submitBallotButton: UIButton!
     
-    /** Button indicating facebook status. */
-    @IBOutlet var facebookButton: UIButton!
+    /** Button to share app. */
+    @IBOutlet var shareButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        //Retrieve user
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        user = appDelegate.user
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        updateView()
+    }
+    
+    func updateView() {
         
         //Configure Labels & Button Titles
         
@@ -63,16 +77,27 @@ class HomeVC: UIViewController {
         votingString.addAttribute(.font, value: UIFont(name: "MuseoSansRounded-900", size: 20.0)!, range: NSRange(location: 0, length: 6))
         votingLabel.attributedText = votingString
         
-        //Registration
-        let registrationText = "Completed"
-        let registrationString = NSMutableAttributedString(string: registrationText, attributes: [
+        //Completed
+        let completeGreen = UIColor(red: 50.0 / 255.0, green: 183.0 / 255.0, blue: 86.0 / 255.0, alpha: 1.0)
+        let completedText = "Completed"
+        let completedString = NSMutableAttributedString(string: completedText, attributes: [
             .font: UIFont(name: "MuseoSansRounded-900", size: 16.0)!,
-            .foregroundColor: UIColor(red: 50.0 / 255.0, green: 183.0 / 255.0, blue: 86.0 / 255.0, alpha: 1.0)
+            .foregroundColor: completeGreen
             ])
-        registrationLabel.attributedText = registrationString
+        
+        //Registration
+        let registrationText = "Deadline: " + ElectionResourcesVC.registrationDeadline(state: (user?.state)!) + ", 2018"
+        let registrationString = NSMutableAttributedString(string: registrationText, attributes: [
+            .font: UIFont(name: "MuseoSansRounded-500", size: 16.0)!,
+            .foregroundColor: UIColor(white: 112.0 / 255.0, alpha: 1.0)
+            ])
+        registrationString.addAttributes([
+            .font: UIFont(name: "MuseoSansRounded-900", size: 16.0)!,
+            .foregroundColor: UIColor(red: 237.0 / 255.0, green: 28.0 / 255.0, blue: 36.0 / 255.0, alpha: 1.0)
+            ], range: NSRange(location: 0, length: 9))
         
         //Mail-in Ballot
-        let mailInBallotText = "Deadline: October 23, 2018"
+        let mailInBallotText = "Deadline: " + ElectionResourcesVC.mailInBallotDeadline(state: (user?.state)!) + ", 2018"
         let mailInBallotString = NSMutableAttributedString(string: mailInBallotText, attributes: [
             .font: UIFont(name: "MuseoSansRounded-500", size: 16.0)!,
             .foregroundColor: UIColor(white: 112.0 / 255.0, alpha: 1.0)
@@ -81,7 +106,6 @@ class HomeVC: UIViewController {
             .font: UIFont(name: "MuseoSansRounded-900", size: 16.0)!,
             .foregroundColor: UIColor(red: 237.0 / 255.0, green: 28.0 / 255.0, blue: 36.0 / 255.0, alpha: 1.0)
             ], range: NSRange(location: 0, length: 9))
-        mailInBallotLabel.attributedText = mailInBallotString
         
         //Submit Ballot
         let submitBallotText = "Deadline: November 6, 2018"
@@ -93,15 +117,40 @@ class HomeVC: UIViewController {
             .font: UIFont(name: "MuseoSansRounded-900", size: 16.0)!,
             .foregroundColor: UIColor(red: 237.0 / 255.0, green: 28.0 / 255.0, blue: 36.0 / 255.0, alpha: 1.0)
             ], range: NSRange(location: 0, length: 9))
-        submitBallotLabel.attributedText = submitBallotString
         
-        //Share Facebook Label
-        let facebookString = NSMutableAttributedString(string: "Share to Facebook", attributes: [
-            .font: UIFont(name: "MuseoSansRounded-500", size: 20.0)!,
-            .foregroundColor: UIColor(white: 1.0, alpha: 1.0)
-            ])
-        facebookString.addAttribute(.font, value: UIFont(name: "MuseoSansRounded-900", size: 20.0)!, range: NSRange(location: 9, length: 8))
-        facebookButton.setAttributedTitle(facebookString, for: .normal)
+        //Share Label
+//        let shareString = NSMutableAttributedString(string: "Help a friend vote", attributes: [
+//            .font: UIFont(name: "MuseoSansRounded-500", size: 20.0)!,
+//            .foregroundColor: UIColor(white: 1.0, alpha: 1.0)
+//            ])
+//        shareString.addAttribute(.font, value: UIFont(name: "MuseoSansRounded-900", size: 20.0)!, range: NSRange(location: 9, length: 8))
+//        shareButton.setAttributedTitle(shareString, for: .normal)
+        
+        
+        //Update Buttons/Labels based on status:
+        if user!.isRegistered {
+            registrationLabel.attributedText = completedString
+            registrationButton.backgroundColor = completeGreen
+        }else {
+            registrationLabel.attributedText = registrationString
+            registrationButton.backgroundColor = UIColor(white: 112.0 / 255.0, alpha: 1.0)
+        }
+        
+        if user!.isMailInBallotRequested || user!.willVoteInPerson {
+            mailInBallotLabel.attributedText = completedString
+            mailInBallotButton.backgroundColor = completeGreen
+        }else {
+            mailInBallotLabel.attributedText = mailInBallotString
+            mailInBallotButton.backgroundColor = UIColor(white: 112.0 / 255.0, alpha: 1.0)
+        }
+        
+        if user!.isBallotSubmitted {
+            submitBallotLabel.attributedText = completedString
+            submitBallotButton.backgroundColor = completeGreen
+        }else {
+            submitBallotLabel.attributedText = submitBallotString
+            submitBallotButton.backgroundColor = UIColor(white: 112.0 / 255.0, alpha: 1.0)
+        }
         
         
     }
@@ -126,9 +175,16 @@ class HomeVC: UIViewController {
         
     }
     
-    /** User pressed Share Button */
-    @IBAction func shareAction() {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let actionVC = segue.destination as? ActionVC {
+            
+            if let button = sender as? UIButton {
+                actionVC.actionType = ActionType(rawValue: button.tag)!
+            }
+            
+        }
         
+        
+        return
     }
-    
 }

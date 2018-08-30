@@ -15,6 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    var user: User?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -24,14 +25,40 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         //Navigate to initial screen if first time app opened
         user = retrieveUser()
-        if user == nil {
+        if user == nil || user?.state == nil || user?.firstName == nil {
             let storyboard = "Main"
             let vc = "WelcomeVC"
             displayViewController(storyboard: storyboard, vc: vc)
         }
         
+        //Request Notifications Permission
+        NotificationScheduler.requestNotifAccess()
+        
+        
         
         return true
+    }
+    
+    func retrieveUser() -> User? {
+        
+        let request = NSFetchRequest<NSFetchRequestResult>(entityName: "User")
+        request.returnsObjectsAsFaults = false
+        
+        let context = persistentContainer.viewContext
+        
+        do {
+            let result = try context.fetch(request)
+            for data in result as! [NSManagedObject] {
+                //Return first user object
+                if let user = data as? User {
+                    return user
+                }
+            }
+        }catch {
+            print("Failed to find object")
+        }
+        
+        return nil
     }
 
     func applicationWillResignActive(_ application: UIApplication) {
@@ -42,10 +69,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(_ application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        NotificationScheduler.scheduleNotifs()
+        self.saveContext()
     }
 
     func applicationWillEnterForeground(_ application: UIApplication) {
         // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
+        NotificationScheduler.removeNotifs()
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {

@@ -68,7 +68,7 @@ extension MenuVC: UICollectionViewDataSource, UICollectionViewDelegate, UICollec
         //#HARDCODE Titles
         switch indexPath.row {
         case 0:
-            cell.title.text = "Dashboard"
+            cell.title.text = "Home"
         case 1:
             cell.title.text = "Settings"
         case 2:

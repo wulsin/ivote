@@ -8,10 +8,13 @@
 
 import Foundation
 import UIKit
+import MagicalRecord
 
 class SettingsVC: KeyboardAwareVC {
     
     //MARK: Variables & Constants
+    /** Current User Object */
+    var user : User?
     
     /** State Picker */
     @IBOutlet var picker: UIPickerView!
@@ -25,11 +28,48 @@ class SettingsVC: KeyboardAwareVC {
     /** Select State Button */
     @IBOutlet var selectStateBut: UIButton!
     
+    /** Continue Button */
+    @IBOutlet var continueBut: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         
+        //Retrieve user
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        user = appDelegate.user
         
+        //Update Fields based on user data
+        if user != nil {
+            if user?.firstName != "" && user?.firstName != nil {
+                firstNameTF.text = user?.firstName
+            }
+            if user?.state != "" && user?.state != nil {
+                //Determine state num & select appropriate picker row
+                var i = 0
+                while i < 51 {
+                    if title(row: i) == user?.state {
+                        picker.selectRow(i, inComponent: 0, animated: false)
+                        selectStateBut.setTitle(user?.state, for: .normal)
+                        break
+                    }
+                    i += 1
+                }
+            }
+        }else {
+            //Create User
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            
+            let context = appDelegate.persistentContainer.viewContext
+            if user == nil {
+                let entity = NSEntityDescription.entity(forEntityName: "User", in: context)
+                user = (NSManagedObject(entity: entity!, insertInto: context) as! User)
+            }
+            
+            //Retrieve Context and Save
+            appDelegate.user = user
+            appDelegate.saveContext()
+        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -46,14 +86,33 @@ class SettingsVC: KeyboardAwareVC {
     /** Continue to Home Screen */
     @IBAction func continueHome() {
         //Validate that user data exists
+        if user?.firstName != "" && user?.firstName != nil && user?.state != "" && user?.state != nil {
+            self.performSegue(withIdentifier: "OpenHome", sender: nil)
+        }else {
+            let alertController = UIAlertController(title: "Data Required",
+                                                    message: "Oops, you need to fill all required fields to continue.",
+                                                    preferredStyle: .alert)
+            let dismiss = UIAlertAction(title: "Okay", style: .cancel) { (action: UIAlertAction) in}
+            alertController.addAction(dismiss)
+            
+            //Handle iPad
+            if let popoverController = alertController.popoverPresentationController {
+                popoverController.sourceView = continueBut
+            }
+            
+            
+            self.present(alertController, animated: true, completion: nil)
+        }
         
         
-        self.performSegue(withIdentifier: "OpenHome", sender: nil)
     }
     
     
     /** Show Picker */
     @IBAction func showPicker() {
+        
+        if firstNameTF.isFirstResponder { firstNameTF.resignFirstResponder() }
+        
         UIView.animate(withDuration: 0.5) {
             self.pickerBottomSpace.constant = 0.0
         }
@@ -61,6 +120,8 @@ class SettingsVC: KeyboardAwareVC {
     
     /** Hide Picker */
     func hidePicker() {
+        
+        
         UIView.animate(withDuration: 0.5) {
             self.pickerBottomSpace.constant = -162.0
         }
@@ -74,7 +135,7 @@ extension SettingsVC : UIPickerViewDelegate, UIPickerViewDataSource {
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return 50
+        return 51
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
@@ -101,88 +162,90 @@ extension SettingsVC : UIPickerViewDelegate, UIPickerViewDataSource {
         case 7:
             return "Delaware"
         case 8:
-            return "Florida"
+            return "District of Columbia"
         case 9:
-            return "Georgia"
+            return "Florida"
         case 10:
-            return "Hawaii"
+            return "Georgia"
         case 11:
-            return "Idaho"
+            return "Hawaii"
         case 12:
-            return "Illinois"
+            return "Idaho"
         case 13:
-            return "Indiana"
+            return "Illinois"
         case 14:
-            return "Iowa"
+            return "Indiana"
         case 15:
-            return "Kansas"
+            return "Iowa"
         case 16:
-            return "Kentucky"
+            return "Kansas"
         case 17:
-            return "Louisiana"
+            return "Kentucky"
         case 18:
-            return "Maine"
+            return "Louisiana"
         case 19:
-            return "Maryland"
+            return "Maine"
         case 20:
-            return "Massachusetts"
+            return "Maryland"
         case 21:
-            return "Michigan"
+            return "Massachusetts"
         case 22:
-            return "Minnesota"
+            return "Michigan"
         case 23:
-            return "Mississippi"
+            return "Minnesota"
         case 24:
-            return "Missouri"
+            return "Mississippi"
         case 25:
-            return "Montana"
+            return "Missouri"
         case 26:
-            return "Nebraska"
+            return "Montana"
         case 27:
-            return "Nevada"
+            return "Nebraska"
         case 28:
-            return "New Hampshire"
+            return "Nevada"
         case 29:
-            return "New Jersey"
+            return "New Hampshire"
         case 30:
-            return "New Mexico"
+            return "New Jersey"
         case 31:
-            return "New York"
+            return "New Mexico"
         case 32:
-            return "North Carolina"
+            return "New York"
         case 33:
-            return "North Dakota"
+            return "North Carolina"
         case 34:
-            return "Ohio"
+            return "North Dakota"
         case 35:
-            return "Oklahoma"
+            return "Ohio"
         case 36:
-            return "Oregon"
+            return "Oklahoma"
         case 37:
-            return "Pennsylvania"
+            return "Oregon"
         case 38:
-            return "Rhode Island"
+            return "Pennsylvania"
         case 39:
-            return "South Carolina"
+            return "Rhode Island"
         case 40:
-            return "South Dakota"
+            return "South Carolina"
         case 41:
-            return "Tennessee"
+            return "South Dakota"
         case 42:
-            return "Texas"
+            return "Tennessee"
         case 43:
-            return "Utah"
+            return "Texas"
         case 44:
-            return "Vermont"
+            return "Utah"
         case 45:
-            return "Virginia"
+            return "Vermont"
         case 46:
-            return "Washington"
+            return "Virginia"
         case 47:
-            return "West Virginia"
+            return "Washington"
         case 48:
-            return "Wisconsin"
+            return "West Virginia"
         case 49:
+            return "Wisconsin"
+        case 50:
             return "Wyoming"
         default:
             return ""
@@ -193,5 +256,41 @@ extension SettingsVC : UIPickerViewDelegate, UIPickerViewDataSource {
         let state = title(row: row)
         selectStateBut.setTitle(state, for: .normal)
         hidePicker()
+        
+        //Update User
+        user?.state = state
+    }
+}
+
+
+/** Handle updates to First Name */
+extension SettingsVC : UITextFieldDelegate {
+    
+    func  textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        
+        textField.resignFirstResponder()
+//        showPicker()
+        return true
+    }
+    
+    /** Record bottom edge of active text field frame (for proper adjustment when user types keyboard) */
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        if textField.text == "First Name" {
+            textField.text = ""
+        }
+        
+        bottomEdge = textField.frame.origin.y + textField.frame.size.height + 75
+        updateOffset()
+        return true
+    }
+    
+    //** When editing is over, dismiss keyboard & reset bottom edge*/
+    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
+        //Update user
+        if textField.text != "First Name" && textField.text != "" { //#LOCALIZE
+            user?.firstName = textField.text
+        }
+        
+        bottomEdge = 0
     }
 }
