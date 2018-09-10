@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		17CCEC897423B90540C90699 /* Pods_iVote.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E1D13823292BC1E3DE59C391 /* Pods_iVote.framework */; };
 		292B1EAA212230F9001EA082 /* NotificationScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 292B1EA9212230F9001EA082 /* NotificationScheduler.swift */; };
+		2938719D213856D6002D54FC /* testAbsentee.html in Resources */ = {isa = PBXBuildFile; fileRef = 2938719C213856D6002D54FC /* testAbsentee.html */; };
 		29495511210C0F1B00E9F2D5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29495510210C0F1B00E9F2D5 /* AppDelegate.swift */; };
 		29495513210C0F1B00E9F2D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29495512210C0F1B00E9F2D5 /* ViewController.swift */; };
 		29495516210C0F1B00E9F2D5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 29495514210C0F1B00E9F2D5 /* Main.storyboard */; };
@@ -49,6 +50,7 @@
 
 /* Begin PBXFileReference section */
 		292B1EA9212230F9001EA082 /* NotificationScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationScheduler.swift; sourceTree = "<group>"; };
+		2938719C213856D6002D54FC /* testAbsentee.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = testAbsentee.html; sourceTree = "<group>"; };
 		2949550D210C0F1B00E9F2D5 /* iVote.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iVote.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		29495510210C0F1B00E9F2D5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		29495512210C0F1B00E9F2D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 		29495543210FA09400E9F2D5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2938719C213856D6002D54FC /* testAbsentee.html */,
 				29495548210FA9E600E9F2D5 /* MuseoSansRounded-900.otf */,
 				29495541210FA08200E9F2D5 /* MuseoSansRounded-500.otf */,
 				2949551A210C0F1B00E9F2D5 /* Assets.xcassets */,
@@ -325,6 +328,7 @@
 				29495542210FA08200E9F2D5 /* MuseoSansRounded-500.otf in Resources */,
 				29495549210FA9E600E9F2D5 /* MuseoSansRounded-900.otf in Resources */,
 				2949551E210C0F1B00E9F2D5 /* LaunchScreen.storyboard in Resources */,
+				2938719D213856D6002D54FC /* testAbsentee.html in Resources */,
 				2949551B210C0F1B00E9F2D5 /* Assets.xcassets in Resources */,
 				29495516210C0F1B00E9F2D5 /* Main.storyboard in Resources */,
 			);

@@ -268,7 +268,7 @@ class ElectionResourcesVC: UIViewController {
         if state == "Alabama" {
             return "November 1"
         }else if state == "Alaska" {
-            return "OOctober 27"
+            return "October 27"
         }else if state == "Arizona" {
             return "October 26"
         }else if state == "Arkansas" {

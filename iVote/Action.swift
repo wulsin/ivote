@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 import MagicalRecord
 import WebKit
+import SafariServices //#CLEANUP
 
 /**  Enum for Action states. */
 enum ActionType: Int {
@@ -340,6 +341,8 @@ class ActionVC: UIViewController {
         if let changeStatusVC = segue.destination as? ChangeStatusVC {
             changeStatusVC.actionType = actionType
         }
+        //#CLEANUP
+        /*
         if let webVC = segue.destination as? WebVC {
             webVC.actionType = actionType
             
@@ -353,7 +356,7 @@ class ActionVC: UIViewController {
             }
             
         }
-        
+        */
     }
     
     /** Perform Action */
@@ -363,20 +366,29 @@ class ActionVC: UIViewController {
         //Update user status //#TEMP
         switch actionType {
         case .registration:
-            self.performSegue(withIdentifier: "OpenWebVC", sender: sender)
+            if sender.tag == 0 {
+                self.openWithSafariVC("https://www.vote.org/register-to-vote/")
+            }else {
+                self.openWithSafariVC("https://www.vote.org/am-i-registered-to-vote/")
+            }
+//            self.performSegue(withIdentifier: "OpenWebVC", sender: sender)
 //            user?.isRegistered = true
             updateLastCheckedRegistration()
             break
         case .mailInBallot:
-            self.performSegue(withIdentifier: "OpenWebVC", sender: sender)
+            self.openWithSafariVC("https://www.vote.org/absentee-ballot/")
+//            self.performSegue(withIdentifier: "OpenWebVC", sender: sender)
 //            user?.isMailInBallotRequested = true
             updateLastCheckedMailInBallot()
             break
         case .submitBallot:
             self.performSegue(withIdentifier: "OpenElectionResources", sender: sender)
             break
-        case .registrationCheck:
-            self.performSegue(withIdentifier: "OpenWebVC", sender: sender)
+//        case .registrationCheck:
+//            self.openWithSafariVC("https://www.vote.org/am-i-registered-to-vote/")
+//            self.performSegue(withIdentifier: "OpenWebVC", sender: sender)
+//            break
+        default:
             break
         }
     }
@@ -398,10 +410,25 @@ class ActionVC: UIViewController {
         
         user?.lastCheckedMailInBallot = todayStr
     }
-    
+    //#CLEANUP
+    func openWithSafariVC(_ urlStr: String)
+    {
+//        let localFilePath = Bundle.main.url(forResource: "testAbsentee", withExtension: "html")
+        var url = URL.init(string: urlStr)!
+//        let request = URLRequest(url: url)
+        let svc = SFSafariViewController(url: url)
+//        svc.delegate = self
+        self.present(svc, animated: true, completion: nil)
+    }
 
 }
+    
+//extension ActionVC : SFSafariViewControllerDelegate {
+//
+//}
 
+//#CLEANUP
+/*
 class WebVC: UIViewController {
     //MARK: Variables & Constants
     var actionType: ActionType = .registration
@@ -417,22 +444,30 @@ class WebVC: UIViewController {
         webView.navigationDelegate = self
         
         var html = ""
+//        var url : URL = URL.init(string: "https://www.vote.org")!
         switch actionType {
         case .registration:
+//            url = URL.init(string: "https://www.vote.org/register-to-vote/")!
             html = "<!DOCTYPE html><html><body><iframe src=\"https://register.vote.org/?partner=111111&campaign=free-tools\" width=\"100%\" marginheight=\"0\" frameborder=\"0\" id=\"frame1\" scrollable =\"no\"></iframe><script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.min.js\"></script><script type=\"text/javascript\">iFrameResize({ log:true, checkOrigin:false});</script></body></html>"
             break
         case .mailInBallot:
-            html = "<!DOCTYPE html><html><body><iframe src=\"https://absentee.vote.org/?partner=111111&campaign=free-tools\" width=\"100%\" marginheight=\"0\" frameborder=\"0\" id=\"frame2\" scrollable=\"no\"></iframe><script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.min.js\"></script><script type=\"text/javascript\">iFrameResize({ log:true, checkOrigin:false});</script></body></html>"
+//            url = URL.init(string: "https://www.vote.org/absentee-ballot/")!
             
+            html = "<!DOCTYPE html><html><body><iframe src=\"https://absentee.vote.org/?partner=111111&campaign=free-tools\" width=\"100%\" marginheight=\"0\" frameborder=\"0\" id=\"frame2\" scrollable=\"no\"></iframe><script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.min.js\"></script><script type=\"text/javascript\">iFrameResize({ log:true, checkOrigin:false});</script></body></html>"
+
             break
         case .submitBallot:
             break
         case .registrationCheck:
+//            url = URL.init(string: "https://www.vote.org/am-i-registered-to-vote/")!
             html = "<!DOCTYPE html><html><body><iframe src=\"https://verify.vote.org/?partner=111111&campaign=free-tools\" width=\"100%\" marginheight=\"0\" frameborder=\"0\" id=\"frame3\" scrollable=\"no\"></iframe><script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.min.js\" ></script><script type=\"text/javascript\">iFrameResize({ log:true, checkOrigin:false});</script></body></html>"
             break
             
         }
         
+        
+//        let urlRequest = URLRequest.init(url: url)
+//        webView.load(urlRequest)
         webView.loadHTMLString(html, baseURL: nil)
         
         //Zoom in
@@ -461,7 +496,24 @@ extension WebVC : WKNavigationDelegate {
         loadingIndicator.startAnimating()
         loadingIndicator.isHidden = false
     }
-}
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void) {
+        // Allow navigation for requests loading external web content resources.
+        decisionHandler(.allow)
+        return
+//        guard navigationAction.targetFrame?.isMainFrame != false else {
+//            decisionHandler(.allow)
+//            return
+//        }else {
+//            decisionHandler(.cancel)
+//        }
+    }
+    
+    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
+        decisionHandler(.allow)
+        return
+    }
+}*/
 
 
 class ChangeStatusVC: UIViewController {
