@@ -414,11 +414,14 @@ class ActionVC: UIViewController {
     func openWithSafariVC(_ urlStr: String)
     {
 //        let localFilePath = Bundle.main.url(forResource: "testAbsentee", withExtension: "html")
-        var url = URL.init(string: urlStr)!
-//        let request = URLRequest(url: url)
-        let svc = SFSafariViewController(url: url)
-//        svc.delegate = self
-        self.present(svc, animated: true, completion: nil)
+        let url = URL.init(string: urlStr)!
+        
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+        
+////        let request = URLRequest(url: url)
+//        let svc = SFSafariViewController(url: url)
+////        svc.delegate = self
+//        self.present(svc, animated: true, completion: nil)
     }
 
 }
