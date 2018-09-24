@@ -583,42 +583,60 @@ class ChangeStatusVC: UIViewController {
     
     /** User selected Yes Option. */
     @IBAction func selectYes(){
+        
+        //Update User Defaults for Siri App Extension:
+        let userDefaults = UserDefaults.init(suiteName: "group.tech.ivote.ivote")//"group.com.Goldfish.iVote")
+        
         switch actionType {
         case .registration:
             user!.isRegistered = true
+            userDefaults?.set(true, forKey: "IsRegistered")
             break
         case .mailInBallot:
             user!.isMailInBallotRequested = true
             user!.willVoteInPerson = false
+
+            userDefaults?.set(true, forKey: "IsMailInBallotRequested")
             break
         case .submitBallot:
             user!.isBallotSubmitted = true
+            userDefaults?.set(true, forKey: "IsBallotSubmitted")
             break
             
         default:
             break
         }
         
+        userDefaults?.synchronize()
         dismissVC()
     }
     
     /** User selected No Option. */
     @IBAction func selectNo(){
+        //Update User Defaults for Siri App Extension:
+        let userDefaults = UserDefaults.init(suiteName: "group.tech.ivote.ivote") //"group.com.Goldfish.iVote")
+        
+        
         switch actionType {
         case .registration:
             user!.isRegistered = false
+            userDefaults?.set(false, forKey: "IsRegistered")
             break
         case .mailInBallot:
             user!.isMailInBallotRequested = false
             user!.willVoteInPerson = false
+            userDefaults?.set(false, forKey: "IsMailInBallotRequested")
             break
         case .submitBallot:
             user!.isBallotSubmitted = false
+            userDefaults?.set(false, forKey: "IsBallotSubmitted")
             break
             
         default:
             break
         }
+        
+        userDefaults?.synchronize()
         
         dismissVC()
     }
@@ -627,6 +645,12 @@ class ChangeStatusVC: UIViewController {
     @IBAction func willVoteInPerson() {
         user!.isMailInBallotRequested = false
         user!.willVoteInPerson = true
+        
+        //Update User Defaults for Siri App Extension:
+        let userDefaults = UserDefaults.init(suiteName: "group.tech.ivote.ivote")//"group.com.Goldfish.iVote")
+        userDefaults?.set(false, forKey: "IsMailInBallotRequested")
+        userDefaults?.synchronize()
+        
         dismissVC()
     }
     

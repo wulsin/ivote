@@ -8,7 +8,7 @@
 
 import Foundation
 import UIKit
-
+import Intents
 
 class HomeVC: UIViewController {
     
@@ -50,6 +50,15 @@ class HomeVC: UIViewController {
         //Retrieve user
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         user = appDelegate.user
+        
+        //Request Siri Access
+        INPreferences.requestSiriAuthorization { status in
+            if status == .authorized {
+                print("Hey, Siri!")
+            } else {
+                print("Nay, Siri!")
+            }
+        }
         
     }
     
