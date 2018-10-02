@@ -64,19 +64,6 @@ class KeyboardAwareVC : UIViewController {
         }
     }
     
-    /* Include this in Text Field Delegate
-    /** Record bottom edge of active text field frame (for proper adjustment when user types keyboard) */
-    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        bottomEdge = textField.frame.origin.y + textField.frame.size.height + 75
-        updateOffset()
-        return true
-    }
-    
-    //** When editing is over, dismiss keyboard & reset bottom edge*/
-    func textFieldDidEndEditing(_ textField: UITextField, reason: UITextFieldDidEndEditingReason) {
-        bottomEdge = 0
-    }
-    */
 }
 
 //MARK: Border Control Extensions

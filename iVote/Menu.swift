@@ -10,10 +10,8 @@ import Foundation
 import UIKit
 
 class MenuVC: UIViewController {
-    
     //MARK: Variables & Constants
     @IBOutlet var collectionView: UICollectionView!
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,8 +39,6 @@ class MenuCell : UICollectionViewCell {
     
     /** Menu item title. */
     @IBOutlet var title: UILabel!
-    
-    
 }
 
 

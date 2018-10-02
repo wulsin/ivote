@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import MagicalRecord
 import WebKit
-import SafariServices //#CLEANUP
+import SafariServices
 
 /**  Enum for Action states. */
 enum ActionType: Int {
@@ -157,7 +157,6 @@ class ActionVC: UIViewController {
         case .mailInBallot:
             headerLabel.text = "Request Mail-In Ballot"
             
-            
             let ballotRequested = user!.isMailInBallotRequested
             let willVoteInPerson = user!.willVoteInPerson
             if ballotRequested {
@@ -204,8 +203,6 @@ class ActionVC: UIViewController {
                 checkStatusBut.isHidden = true
                 checkStatusLabel.isHidden = true
                 changeStatusTopSpace.constant = -actionBut.frame.size.height
-//                checkStatusTopSpace.constant = buttonHiddenTopSpace
-//                changeStatusTopSpace.constant = buttonHiddenTopSpace + checkStatusChangeStatusGap
                 
             }else {
                 headerImg.image = #imageLiteral(resourceName: "actionIncomplete")
@@ -241,25 +238,13 @@ class ActionVC: UIViewController {
                 checkStatusBut.isHidden = true
                 checkStatusLabel.isHidden = true
                 changeStatusTopSpace.constant = 48
-                
-//                checkStatusTopSpace.constant = buttonVisibleTopSpace
-//                changeStatusTopSpace.constant = buttonVisibleTopSpace + checkStatusChangeStatusGap
+             
             }
-            
-            //Update Last Checked:
-//            let lastCheckedDate = user?.lastCheckedMailInBallot == nil ? "N/A" : (user?.lastCheckedMailInBallot)! + ", 2018"
-//            let lastCheckedString = NSMutableAttributedString(string: "Last Checked: " + lastCheckedDate, attributes: [
-//                .font: UIFont(name: "MuseoSansRounded-500", size: 16.0)!])
-//            lastCheckedString.addAttributes([
-//                .font: UIFont(name: "MuseoSansRounded-900", size: 16.0)!,
-//                .foregroundColor: UIColor(white: 112.0 / 255.0, alpha: 1.0)], range: NSRange(location: 0, length: 14))
-//            checkStatusLabel.attributedText = lastCheckedString
             
             
             break
         case .submitBallot:
             headerLabel.text = "Submit Ballot"
-            
             
             let ballotSubmitted = user!.isBallotSubmitted
             if ballotSubmitted {
@@ -341,22 +326,6 @@ class ActionVC: UIViewController {
         if let changeStatusVC = segue.destination as? ChangeStatusVC {
             changeStatusVC.actionType = actionType
         }
-        //#CLEANUP
-        /*
-        if let webVC = segue.destination as? WebVC {
-            webVC.actionType = actionType
-            
-            //Switch to Registration Check Type if Appropriate
-            if actionType == .registration {
-                if let button = sender as? UIButton {
-                    if button.tag == 1 {
-                        webVC.actionType = .registrationCheck
-                    }
-                }
-            }
-            
-        }
-        */
     }
     
     /** Perform Action */
@@ -371,23 +340,15 @@ class ActionVC: UIViewController {
             }else {
                 self.openWithSafariVC("https://www.vote.org/am-i-registered-to-vote/")
             }
-//            self.performSegue(withIdentifier: "OpenWebVC", sender: sender)
-//            user?.isRegistered = true
             updateLastCheckedRegistration()
             break
         case .mailInBallot:
             self.openWithSafariVC("https://www.vote.org/absentee-ballot/")
-//            self.performSegue(withIdentifier: "OpenWebVC", sender: sender)
-//            user?.isMailInBallotRequested = true
             updateLastCheckedMailInBallot()
             break
         case .submitBallot:
             self.performSegue(withIdentifier: "OpenElectionResources", sender: sender)
             break
-//        case .registrationCheck:
-//            self.openWithSafariVC("https://www.vote.org/am-i-registered-to-vote/")
-//            self.performSegue(withIdentifier: "OpenWebVC", sender: sender)
-//            break
         default:
             break
         }
@@ -410,113 +371,15 @@ class ActionVC: UIViewController {
         
         user?.lastCheckedMailInBallot = todayStr
     }
-    //#CLEANUP
+
     func openWithSafariVC(_ urlStr: String)
     {
-//        let localFilePath = Bundle.main.url(forResource: "testAbsentee", withExtension: "html")
         let url = URL.init(string: urlStr)!
         
         UIApplication.shared.open(url, options: [:], completionHandler: nil)
-        
-////        let request = URLRequest(url: url)
-//        let svc = SFSafariViewController(url: url)
-////        svc.delegate = self
-//        self.present(svc, animated: true, completion: nil)
     }
 
 }
-    
-//extension ActionVC : SFSafariViewControllerDelegate {
-//
-//}
-
-//#CLEANUP
-/*
-class WebVC: UIViewController {
-    //MARK: Variables & Constants
-    var actionType: ActionType = .registration
-    
-    /** Webview. */
-    @IBOutlet var webView: WKWebView!
-    
-    @IBOutlet var loadingIndicator: UIActivityIndicatorView!
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        webView.navigationDelegate = self
-        
-        var html = ""
-//        var url : URL = URL.init(string: "https://www.vote.org")!
-        switch actionType {
-        case .registration:
-//            url = URL.init(string: "https://www.vote.org/register-to-vote/")!
-            html = "<!DOCTYPE html><html><body><iframe src=\"https://register.vote.org/?partner=111111&campaign=free-tools\" width=\"100%\" marginheight=\"0\" frameborder=\"0\" id=\"frame1\" scrollable =\"no\"></iframe><script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.min.js\"></script><script type=\"text/javascript\">iFrameResize({ log:true, checkOrigin:false});</script></body></html>"
-            break
-        case .mailInBallot:
-//            url = URL.init(string: "https://www.vote.org/absentee-ballot/")!
-            
-            html = "<!DOCTYPE html><html><body><iframe src=\"https://absentee.vote.org/?partner=111111&campaign=free-tools\" width=\"100%\" marginheight=\"0\" frameborder=\"0\" id=\"frame2\" scrollable=\"no\"></iframe><script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.min.js\"></script><script type=\"text/javascript\">iFrameResize({ log:true, checkOrigin:false});</script></body></html>"
-
-            break
-        case .submitBallot:
-            break
-        case .registrationCheck:
-//            url = URL.init(string: "https://www.vote.org/am-i-registered-to-vote/")!
-            html = "<!DOCTYPE html><html><body><iframe src=\"https://verify.vote.org/?partner=111111&campaign=free-tools\" width=\"100%\" marginheight=\"0\" frameborder=\"0\" id=\"frame3\" scrollable=\"no\"></iframe><script type=\"text/javascript\" src=\"//cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.3/iframeResizer.min.js\" ></script><script type=\"text/javascript\">iFrameResize({ log:true, checkOrigin:false});</script></body></html>"
-            break
-            
-        }
-        
-        
-//        let urlRequest = URLRequest.init(url: url)
-//        webView.load(urlRequest)
-        webView.loadHTMLString(html, baseURL: nil)
-        
-        //Zoom in
-//        webView.scrollView.zoomScale = 2.2 //#CLEANUP
-    }
-    
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    /** Dismiss View Controller */
-    @IBAction func dismissVC() {
-        self.dismiss(animated: true) {}
-    }
-}
-
-extension WebVC : WKNavigationDelegate {
-    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-        //        webView.scrollView.zoomScale = 3.0  //#CLEANUP
-        loadingIndicator.stopAnimating()
-        loadingIndicator.isHidden = true
-    }
-    
-    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-        loadingIndicator.startAnimating()
-        loadingIndicator.isHidden = false
-    }
-    
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Swift.Void) {
-        // Allow navigation for requests loading external web content resources.
-        decisionHandler(.allow)
-        return
-//        guard navigationAction.targetFrame?.isMainFrame != false else {
-//            decisionHandler(.allow)
-//            return
-//        }else {
-//            decisionHandler(.cancel)
-//        }
-    }
-    
-    func webView(_ webView: WKWebView, decidePolicyFor navigationResponse: WKNavigationResponse, decisionHandler: @escaping (WKNavigationResponsePolicy) -> Void) {
-        decisionHandler(.allow)
-        return
-    }
-}*/
 
 
 class ChangeStatusVC: UIViewController {
@@ -526,12 +389,10 @@ class ChangeStatusVC: UIViewController {
     /** Current User Object */
     var user : User?
     
-    
     var actionType: ActionType = .registration
     
     /** Label prompting user to select a button. */
     @IBOutlet var headerLabel: UILabel!
-    
     @IBOutlet var yesBut: UIButton!
     @IBOutlet var noBut: UIButton!
     @IBOutlet var neitherBut: UIButton!
@@ -585,7 +446,7 @@ class ChangeStatusVC: UIViewController {
     @IBAction func selectYes(){
         
         //Update User Defaults for Siri App Extension:
-        let userDefaults = UserDefaults.init(suiteName: "group.tech.ivote.ivote")//"group.com.Goldfish.iVote")
+        let userDefaults = UserDefaults.init(suiteName: "group.tech.ivote.ivote")
         
         switch actionType {
         case .registration:
@@ -614,8 +475,7 @@ class ChangeStatusVC: UIViewController {
     /** User selected No Option. */
     @IBAction func selectNo(){
         //Update User Defaults for Siri App Extension:
-        let userDefaults = UserDefaults.init(suiteName: "group.tech.ivote.ivote") //"group.com.Goldfish.iVote")
-        
+        let userDefaults = UserDefaults.init(suiteName: "group.tech.ivote.ivote")
         
         switch actionType {
         case .registration:
@@ -647,7 +507,7 @@ class ChangeStatusVC: UIViewController {
         user!.willVoteInPerson = true
         
         //Update User Defaults for Siri App Extension:
-        let userDefaults = UserDefaults.init(suiteName: "group.tech.ivote.ivote")//"group.com.Goldfish.iVote")
+        let userDefaults = UserDefaults.init(suiteName: "group.tech.ivote.ivote")
         userDefaults?.set(false, forKey: "IsMailInBallotRequested")
         userDefaults?.synchronize()
         

@@ -150,9 +150,6 @@ class ElectionResourcesVC: UIViewController {
         
         if url != "" {
             UIApplication.shared.open(URL.init(string: url)!, options: [:], completionHandler: nil)
-            //#CLEANUP
-//            let svc = SFSafariViewController(url: URL(string: url)!)
-//            self.present(svc, animated: true, completion: nil)
         }
     }
     

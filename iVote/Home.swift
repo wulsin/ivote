@@ -127,15 +127,6 @@ class HomeVC: UIViewController {
             .foregroundColor: UIColor(red: 237.0 / 255.0, green: 28.0 / 255.0, blue: 36.0 / 255.0, alpha: 1.0)
             ], range: NSRange(location: 0, length: 9))
         
-        //Share Label
-//        let shareString = NSMutableAttributedString(string: "Help a friend vote", attributes: [
-//            .font: UIFont(name: "MuseoSansRounded-500", size: 20.0)!,
-//            .foregroundColor: UIColor(white: 1.0, alpha: 1.0)
-//            ])
-//        shareString.addAttribute(.font, value: UIFont(name: "MuseoSansRounded-900", size: 20.0)!, range: NSRange(location: 9, length: 8))
-//        shareButton.setAttributedTitle(shareString, for: .normal)
-        
-        
         //Update Buttons/Labels based on status:
         if user!.isRegistered {
             registrationLabel.attributedText = completedString
@@ -190,9 +181,7 @@ class HomeVC: UIViewController {
             if let button = sender as? UIButton {
                 actionVC.actionType = ActionType(rawValue: button.tag)!
             }
-            
         }
-        
         
         return
     }

@@ -261,7 +261,7 @@ extension SettingsVC : UIPickerViewDelegate, UIPickerViewDataSource {
         user?.state = state
         
         //Update User Defaults for Siri App Extension:
-        let userDefaults = UserDefaults.init(suiteName: "group.tech.ivote.ivote")//"group.com.Goldfish.iVote")
+        let userDefaults = UserDefaults.init(suiteName: "group.tech.ivote.ivote")
         userDefaults?.set(state, forKey: "state")
         userDefaults?.set(ElectionResourcesVC.registrationDeadline(state: state!), forKey: "registrationDeadline")
         userDefaults?.set(ElectionResourcesVC.mailInBallotDeadline(state: state!), forKey: "mailInDeadline")
@@ -276,7 +276,6 @@ extension SettingsVC : UITextFieldDelegate {
     func  textFieldShouldReturn(_ textField: UITextField) -> Bool {
         
         textField.resignFirstResponder()
-//        showPicker()
         return true
     }
     

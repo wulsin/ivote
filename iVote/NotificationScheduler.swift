@@ -31,7 +31,15 @@ class NotificationScheduler: NSObject {
         let user = appDelegate.user
         
         let interval : TimeInterval = 60*60*24*2 // 2 Days
-        var curDate = Date().addingTimeInterval(interval)
+        
+        //Determine CurDate & Specify notifications to send at 8:00AM
+        var curDate = Date().addingTimeInterval(interval/2) //Set initial interval to 1 day
+        let calendar = Calendar.current
+        var dateComponents: DateComponents? = calendar.dateComponents([.year, .month, .day], from: curDate)
+        dateComponents?.second = 0
+        dateComponents?.minute = 0
+        dateComponents?.hour = 8
+        curDate = calendar.date(from: dateComponents!)!
         
         //Registration Notif
         if !user!.isRegistered {
@@ -40,12 +48,12 @@ class NotificationScheduler: NSObject {
             let body = "Register to vote by " + deadline + ", 2018"
             let identifier = "RegistrationLocalNotification"
             
-//            let endDate = Date().addingTimeInterval(interval*2)
             let endDate = extractEndDate(from: deadline)
             
             //Schedule Repeating Notifs until end date
             var count: Int = 0
             while curDate.compare(endDate) != .orderedDescending {
+                print("Registration Notif Scheduled for: ", curDate)
                 scheduleNotif(identifier:"\(identifier)_\(count)", title: title, body: body, date: curDate)
                 curDate = curDate.addingTimeInterval(interval)
                 count += 1
@@ -59,12 +67,12 @@ class NotificationScheduler: NSObject {
             let body = "Request your mail-in ballot by " + deadline + ", 2018"
             let identifier = "MailInBallotLocalNotification"
             
-//            let endDate = Date().addingTimeInterval(interval*5)
             let endDate = extractEndDate(from: deadline)
             
             //Schedule Repeating Notifs until end date
             var count: Int = 0
             while curDate.compare(endDate) != .orderedDescending {
+                print("Mail-In Notif Scheduled for: ", curDate)
                 scheduleNotif(identifier:"\(identifier)_\(count)", title: title, body: body, date: curDate)
                 curDate = curDate.addingTimeInterval(interval)
                 count += 1
@@ -79,12 +87,12 @@ class NotificationScheduler: NSObject {
             let body = "Submit ballot by November 6, 2018"
             let identifier = "SubmitBallotLocalNotification"
             
-//            let endDate = Date().addingTimeInterval(interval*8)
             let endDate = extractEndDate(from: deadline)
             
             //Schedule Repeating Notifs until end date
             var count: Int = 0
             while curDate.compare(endDate) != .orderedDescending {
+                print("Submit Ballot Notif Scheduled for: ", curDate)
                 scheduleNotif(identifier:"\(identifier)_\(count)", title: title, body: body, date: curDate)
                 curDate = curDate.addingTimeInterval(interval)
                 count += 1
@@ -92,24 +100,27 @@ class NotificationScheduler: NSObject {
         }
     }
     
+    
     class func extractEndDate(from dateStr: String) -> Date {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "MMMM d"
-        let date = dateFormatter.date(from: dateStr)
+        var date = dateFormatter.date(from: dateStr)
+        
+        let calendar = Calendar.current
+        var dateComponents: DateComponents? = calendar.dateComponents([.month, .day], from: date!)
+        
+        //Specify date is 8:01AM in 2018
+        dateComponents?.second = 0
+        dateComponents?.minute = 1
+        dateComponents?.hour = 8
+        dateComponents?.year = 2018
+        
+        date = calendar.date(from: dateComponents!)
+        
         print(date!)
         return date!
     }
     
-    //#CLEANUP
-//    class func scheduleNotifs(from startDate: Date, to endDate: Date, with interval: TimeInterval) {
-//        var curDate = startDate
-//        var count: Int = 0
-//        while curDate.compare(endDate) != .orderedDescending {
-//            scheduleNotif(identifier:"\(identifier)_\(count)", title: title, body: body, date: curDate)
-//            curDate = curDate.addingTimeInterval(interval)
-//            count += 1
-//        }
-//    }
     
     class func scheduleNotif(identifier: String, title: String, body: String, date: Date) {
         
@@ -132,72 +143,7 @@ class NotificationScheduler: NSObject {
             }
         }
     }
-    
-    //#CLEANUP
-        /*
-        //Registration Notif
-        if !user!.isRegistered {
-            let content = UNMutableNotificationContent()
-            content.title = "Don't forget to register!" //#LOCALIZE
-            content.body = "Register to vote by " + ElectionResourcesVC.registrationDeadline(state: (user?.state)!) + ", 2018"
-            content.sound = UNNotificationSound.default()
-            
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval,
-                                                            repeats: true)
-            
-            let identifier = "RegistrationLocalNotification"
-            let request = UNNotificationRequest(identifier: identifier,
-                                                content: content,
-                                                trigger: trigger)
-            center.add(request, withCompletionHandler: { (error) in
-//                if let error = error {
-//                    // Something went wrong
-//                }
-            })
-        }
-        
-        //Mail-in Ballot Notif
-        else if !user!.isMailInBallotRequested && !user!.willVoteInPerson {
-            let content = UNMutableNotificationContent()
-            content.title = "Don't forget to request a ballot!" //#LOCALIZE
-            content.body = "Request your mail-in ballot by " + ElectionResourcesVC.mailInBallotDeadline(state: (user?.state)!) + ", 2018"
-            content.sound = UNNotificationSound.default()
-            
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval,
-                                                            repeats: true)
-            
-            let identifier = "MailInBallotLocalNotification"
-            let request = UNNotificationRequest(identifier: identifier,
-                                                content: content,
-                                                trigger: trigger)
-            center.add(request, withCompletionHandler: { (error) in
-//                if let error = error {
-//                    // Something went wrong
-//                }
-            })
-        }
-            
-        //Submit Ballot Notif
-        else if !user!.isBallotSubmitted {
-            let content = UNMutableNotificationContent()
-            content.title = "Don't forget to submit your ballot!" //#LOCALIZE
-            content.body = "Submit ballot by November 6, 2018"
-            content.sound = UNNotificationSound.default()
-            
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: interval,
-                                                            repeats: true)
-            
-            let identifier = "SubmitBallotLocalNotification"
-            let request = UNNotificationRequest(identifier: identifier,
-                                                content: content,
-                                                trigger: trigger)
-            center.add(request, withCompletionHandler: { (error) in
-//                if let error = error {
-//                    // Something went wrong
-//                }
-            })
-        }*/
-    
+
     
     /** Remove all scheduled Notifications */
     class func removeNotifs(){
